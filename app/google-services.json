@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "500904967261",
+    "project_id": "lagani20",
+    "storage_bucket": "lagani20.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500904967261:android:55f6877b465b27978761b4",
+        "android_client_info": {
+          "package_name": "com.example.lagani20"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAf86UbrE5WMzb_mH_Elo4j76Lb1Pyg2_A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -1,0 +1,410 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterLogin.Register"
+    android:background="@drawable/register"
+    android:elevation="23dp">
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="217dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-1dp"
+        android:layout_marginTop="-56dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="685dp"
+        android:src="@drawable/regupimg" />
+
+    <TextView
+        android:layout_width="284dp"
+        android:layout_height="50dp"
+        android:text="Register"
+        android:textSize="40dp"
+        android:layout_marginTop="110dp"
+        android:textAlignment="center"
+        android:fontFamily="@font/abhaya_libre"
+        android:layout_centerHorizontal="true"/>
+
+    <TextView
+        android:id="@+id/login"
+        android:layout_width="58dp"
+        android:layout_height="29dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="131dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="164dp"
+        android:text="@string/login"
+        android:textSize="22sp"
+        android:textColor="#A6A6A6"
+        android:fontFamily="@font/abhaya_libre"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/register"
+        android:layout_width="84dp"
+        android:layout_height="29dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="203dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="164dp"
+        android:textSize="22sp"
+        android:textColor="#036BB9"
+        android:text="@string/register"
+        android:gravity="center_vertical|start"
+        />
+
+    <ImageView
+        android:id="@+id/line_3"
+        android:layout_width="84dp"
+        android:layout_height="1dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="202dp"
+        android:layout_marginTop="198dp"
+        android:background="@drawable/line_3"
+        android:visibility="visible" />
+
+    <!-- Name Componet!-->
+
+    <RelativeLayout
+        android:id="@+id/component_1"
+        android:layout_width="357dp"
+        android:layout_height="71dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="230dp"
+        android:clipToOutline="true">
+
+        <RelativeLayout
+            android:id="@+id/property_1_"
+            android:layout_width="317dp"
+            android:layout_height="31dp"
+            android:layout_alignParentLeft="true"
+            android:layout_marginLeft="20dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/name"
+                style="@style/NoUnderlineEditText"
+                android:layout_width="300dp"
+                android:layout_height="35dp"
+                android:layout_toRightOf="@id/emailimage"
+                android:fontFamily="@font/abhaya_libre"
+                android:hint="Name"
+                android:textColorHint="#A6A6A6"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/emailimage"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/profile" />
+        </RelativeLayout>
+        <ImageView
+            android:id="@+id/line_1"
+            android:layout_width="317dp"
+            android:layout_height="2dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/line_1"
+            android:visibility="visible"/>
+    </RelativeLayout>
+
+    <!-- Email Componet!-->
+    <RelativeLayout
+        android:id="@+id/component_2"
+        android:layout_width="357dp"
+        android:layout_height="71dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="25dp"
+        android:layout_marginTop="300dp"
+        android:clipToOutline="true">
+
+        <RelativeLayout
+            android:id="@+id/property_2_"
+            android:layout_width="317dp"
+            android:layout_height="31dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/email"
+                style="@style/NoUnderlineEditText"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toRightOf="@id/lockimage"
+                android:fontFamily="@font/abhaya_libre"
+                android:hint="Email Address"
+                android:textColorHint="#A6A6A6"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/lockimage"
+                android:layout_width="21dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/email" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/line_2"
+            android:layout_width="317dp"
+            android:layout_height="1dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/line_1"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <!-- Contact No -->
+    <RelativeLayout
+        android:id="@+id/component_3"
+        android:layout_width="357dp"
+        android:layout_height="71dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_below="@id/component_2"> <!-- Place it below the email component -->
+        <!--android:clipToOutline="true"> -->
+
+        <RelativeLayout
+            android:id="@+id/property_3_"
+            android:layout_width="317dp"
+            android:layout_height="31dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/contact_number"
+                android:inputType="number"
+                style="@style/NoUnderlineEditText"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toRightOf="@id/contact_image"
+                android:fontFamily="@font/abhaya_libre"
+                android:hint="Contact Number"
+                android:textColorHint="#A6A6A6"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/contact_image"
+                android:layout_width="21dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/call" /> <!-- Adjust as per your image -->
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/line_5"
+            android:layout_width="317dp"
+            android:layout_height="1dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/line_1"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <!-- Password Componet -->
+
+    <RelativeLayout
+        android:id="@+id/component_4"
+        android:layout_width="357dp"
+        android:layout_height="71dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/component_3"
+        android:layout_marginLeft="25dp"
+        android:clipToOutline="true">
+
+        <RelativeLayout
+            android:id="@+id/property_4"
+            android:layout_width="317dp"
+            android:layout_height="31dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/password"
+                style="@style/NoUnderlineEditText"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toRightOf="@id/password_image"
+                android:fontFamily="@font/abhaya_libre"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:textColorHint="#A6A6A6"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/password_image"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/lock" /> <!-- Adjust as per your image -->
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/line_4"
+            android:layout_width="317dp"
+            android:layout_height="1dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/line_1"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <!-- Confirm Password Component -->
+
+    <RelativeLayout
+        android:id="@+id/component_6"
+        android:layout_width="357dp"
+        android:layout_height="71dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/component_4"
+        android:layout_marginLeft="25dp"
+        android:clipToOutline="true">
+
+        <RelativeLayout
+            android:id="@+id/property_5"
+            android:layout_width="317dp"
+            android:layout_height="31dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="20dp">
+
+            <EditText
+                android:id="@+id/confirm_password"
+                style="@style/NoUnderlineEditText"
+                android:layout_width="250dp"
+                android:layout_height="35dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginLeft="3dp"
+                android:layout_marginBottom="0dp"
+                android:layout_toRightOf="@id/confirm_password_image"
+                android:hint="Confirm Password"
+                android:inputType="textPassword"
+                android:textColorHint="#A6A6A6"
+                tools:ignore="TouchTargetSizeCheck" />
+
+            <ImageView
+                android:id="@+id/confirm_password_image"
+                android:layout_width="25dp"
+                android:layout_height="match_parent"
+                android:src="@drawable/cpass" />
+
+        </RelativeLayout>
+
+        <ImageView
+            android:id="@+id/line_6"
+            android:layout_width="317dp"
+            android:layout_height="1dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginBottom="15dp"
+            android:src="@drawable/line_1"
+            android:visibility="visible" />
+    </RelativeLayout>
+
+    <!-- RadioButtons and Submit Button -->
+
+    <RelativeLayout
+        android:id="@+id/component_5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/component_4"
+        android:layout_marginTop="65dp">
+
+        <!-- UserType RadioButton -->
+
+        <RadioGroup
+            android:id="@+id/usertype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_medium"
+            android:orientation="horizontal"
+            android:layout_centerHorizontal="true">
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/donor"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:layout_marginLeft="60dp"
+                android:checked="true"
+                android:text="Donor"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#A6A6A6"
+                android:textSize="20dp" />
+
+            <View
+                android:layout_width="@dimen/spacing_mlarge"
+                android:layout_height="0dp" />
+
+            <androidx.appcompat.widget.AppCompatRadioButton
+                android:id="@+id/rider"
+                android:layout_width="150dp"
+                android:layout_height="50dp"
+                android:text="Rider"
+                android:textAppearance="@style/TextAppearance.AppCompat.Small"
+                android:textColor="#A6A6A6"
+                android:textSize="20dp" />
+
+        </RadioGroup>
+        <!-- Submit Button -->
+
+        <RelativeLayout
+            android:id="@+id/frame_16"
+            android:layout_width="316dp"
+            android:layout_height="39dp"
+            android:layout_marginTop="70dp"
+            android:layout_marginLeft="40dp"
+            android:background="@drawable/frame_16"
+            android:elevation="4dp">
+
+            <TextView
+                android:id="@+id/registerbtn"
+                android:layout_width="316dp"
+                android:layout_height="39dp"
+                android:layout_alignParentBottom="true"
+                android:layout_marginBottom="0dp"
+                android:layout_centerInParent="true"
+                android:text="Register"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
+        </RelativeLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
