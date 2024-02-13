@@ -21,6 +21,12 @@ public class ForgetPassword extends AppCompatActivity {
     EditText email;
     TextView resetbtn;
     BasicUtils utils = new BasicUtils();
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+       // overridePendingTransition(R.anim.slide_in_left,R.anim.slide_in_right);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
