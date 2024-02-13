@@ -22,6 +22,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -58,6 +59,42 @@ public class MainActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
         BasicUtils utils = new BasicUtils();
+        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+        ProgressDialog progressDialog;
+
+        if(user != null)
+        {
+            progressDialog = new ProgressDialog(MainActivity.this);
+            progressDialog.setMessage("Loading...");
+            progressDialog.setCancelable(false);
+            progressDialog.setCanceledOnTouchOutside(false);
+            progressDialog.show();
+
+            db.getReference().child("Users").child(auth.getCurrentUser().getUid()).addValueEventListener(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                    User userobj = snapshot.getValue(User.class);
+                    if(userobj.userType == 1)
+                    {
+                        progressDialog.dismiss();
+                        startActivity(new Intent(MainActivity.this, DonorDashboard.class));
+                        overridePendingTransition(R.anim.push_up_in,R.anim.push_up_out);
+                    }
+                    else
+                    {
+                        progressDialog.dismiss();
+                        startActivity(new Intent(MainActivity.this, RiderDashboard.class));
+                        overridePendingTransition(R.anim.push_up_in,R.anim.push_up_out);
+                    }
+                    finish();
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError error) {
+
+                }
+            });
+        }
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override

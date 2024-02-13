@@ -16,6 +16,8 @@
         <activity
             android:name=".Dashboard.RiderDashboard"
             android:exported="false" />
+        <activity android:name=".Dashboard.DonorDashboard">
+        </activity>
         <activity
             android:name=".RegisterLogin.Register"
             android:exported="false" />

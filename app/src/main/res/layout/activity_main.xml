@@ -198,7 +198,7 @@
         android:layout_alignParentTop="true"
         android:layout_marginStart="44dp"
         android:layout_marginTop="469dp"
-        android:layout_marginEnd="3dp"
+        android:layout_marginEnd="4dp"
         android:layout_marginBottom="4dp"
         android:src="@drawable/check"
         android:visibility="visible" />
@@ -218,7 +218,7 @@
 
     <TextView
         android:id="@+id/forget_pass"
-        android:layout_width="160dp"
+        android:layout_width="170dp"
         android:layout_height="27dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
@@ -251,10 +251,11 @@
             android:layout_alignParentBottom="true"
             android:layout_marginEnd="0dp"
             android:layout_marginBottom="0dp"
+            android:fontFamily="@font/abhaya_libre"
             android:text="@string/login"
             android:textAlignment="center"
             android:textColor="#FFFFFF"
-            android:textSize="25sp" />
+            android:textSize="30sp" />
     </RelativeLayout>
 
     <ImageView
