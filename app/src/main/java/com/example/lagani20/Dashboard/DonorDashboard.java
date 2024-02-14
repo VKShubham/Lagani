@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Toast;
 
 import com.example.lagani20.R;
 import com.example.lagani20.RegisterLogin.MainActivity;
@@ -24,6 +25,7 @@ public class DonorDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
+                Toast.makeText(DonorDashboard.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(DonorDashboard.this,MainActivity.class));
                 overridePendingTransition(R.anim.push_up_in,R.anim.push_down_out);
             }

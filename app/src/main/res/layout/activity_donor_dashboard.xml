@@ -2,8 +2,8 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/donators_da"
-    android:layout_width="414dp"
-    android:layout_height="896dp"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     android:clipToOutline="true"
     tools:context=".Dashboard.DonorDashboard"
     android:elevation="23dp"
@@ -11,7 +11,7 @@
 
     <View
         android:id="@+id/rectangle_1"
-        android:layout_width="414dp"
+        android:layout_width="395dp"
         android:layout_height="80dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -25,7 +25,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="15dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/menuicon"
         />
 
@@ -36,7 +36,7 @@
         android:layout_alignParentLeft="true"
         android:layout_marginLeft="55dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="18dp"
         android:text="Lagni"
         android:textAppearance="@style/lagni"
         android:gravity="center_horizontal|top"
@@ -44,12 +44,12 @@
 
     <ImageView
         android:id="@+id/ellipse_10"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="350dp"
+        android:layout_marginLeft="345dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="18dp"
         android:src="@drawable/persosndashlogo"
         />
 
@@ -88,6 +88,19 @@
         android:layout_marginTop="133dp"
         />
 
+    <TextView
+        android:id="@+id/status"
+        android:layout_width="107dp"
+        android:layout_height="19dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="99dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="195dp"
+        android:text="Status"
+        android:textAppearance="@style/donation"
+        android:gravity="center_horizontal|top"
+        />
+
     <View
         android:id="@+id/rectangle_5"
         android:layout_width="72dp"
@@ -110,6 +123,19 @@
         android:layout_marginTop="133dp"
         />
 
+    <TextView
+        android:id="@+id/history"
+        android:layout_width="68dp"
+        android:layout_height="19dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="215dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="195dp"
+        android:text="History"
+        android:textAppearance="@style/donation"
+        android:gravity="center_horizontal|top"
+        />
+
     <View
         android:id="@+id/rectangle_6"
         android:layout_width="72dp"
@@ -130,6 +156,19 @@
         android:layout_alignParentTop="true"
         android:src="@drawable/logouticon"
         android:layout_marginTop="135dp"
+        />
+
+    <TextView
+        android:id="@+id/logout"
+        android:layout_width="71dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="307dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="195dp"
+        android:text="Logout"
+        android:textAppearance="@style/donation"
+        android:gravity="center_horizontal|top"
         />
 
     <View
@@ -169,13 +208,24 @@
         android:layout_width="230dp"
         android:layout_height="72dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="145dp"
         android:layout_alignParentTop="true"
+        android:layout_marginLeft="145dp"
         android:layout_marginTop="270dp"
-        android:text="Donation History"
-        android:textAppearance="@style/donation_hi"
         android:gravity="center_horizontal|center_vertical"
-        />
+        android:text="Donation History"
+        android:textAppearance="@style/donation_hi" />
+
+    <TextView
+        android:id="@+id/donation"
+        android:layout_width="94dp"
+        android:layout_height="19dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="9dp"
+        android:layout_marginTop="195dp"
+        android:gravity="center_horizontal|top"
+        android:text="donation"
+        android:textAppearance="@style/donation"/>
 
     <View
         android:id="@+id/rectangle_7"
@@ -277,7 +327,7 @@
         android:layout_marginLeft="18dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="577dp"
-        android:background="@drawable/rectangle_2"
+        android:background="@drawable/rectangle_5"
         />
 
     <ImageView

@@ -56,12 +56,13 @@
         android:textSize="22sp"
         android:textColor="#036BB9"
         android:text="@string/register"
+        android:fontFamily="@font/abhaya_libre"
         android:gravity="center_vertical|start"
         />
 
     <ImageView
         android:id="@+id/line_3"
-        android:layout_width="84dp"
+        android:layout_width="78dp"
         android:layout_height="1dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
@@ -366,6 +367,7 @@
                 android:text="Donor"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="#A6A6A6"
+                android:fontFamily="@font/abhaya_libre"
                 android:textSize="20dp" />
 
             <View
@@ -379,6 +381,7 @@
                 android:text="Rider"
                 android:textAppearance="@style/TextAppearance.AppCompat.Small"
                 android:textColor="#A6A6A6"
+                android:fontFamily="@font/abhaya_libre"
                 android:textSize="20dp" />
 
         </RadioGroup>
