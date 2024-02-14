@@ -1,0 +1,517 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Modules.ADDDonations"
+    android:background="@drawable/donators">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:clipToOutline="true">
+
+            <View
+                android:id="@+id/rectangle_1"
+                android:layout_width="395dp"
+                android:layout_height="80dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:background="@drawable/rectangle_1" />
+
+            <ImageView
+                android:id="@+id/ellipse_10"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="345dp"
+                android:layout_marginTop="18dp"
+                android:src="@drawable/persosndashlogo" />
+
+            <TextView
+                android:id="@+id/lagni"
+                android:layout_width="284dp"
+                android:layout_height="57dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="55dp"
+                android:layout_marginTop="18dp"
+                android:gravity="center_horizontal|top"
+                android:text="Lagni"
+                android:textAppearance="@style/lagni" />
+
+            <View
+                android:id="@+id/rectangle_2"
+                android:layout_width="370dp"
+                android:layout_height="155dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="115dp"
+                android:background="@drawable/rectangle_2_for_donationsac" />
+
+            <TextView
+                android:id="@+id/donation_ty"
+                android:layout_width="160dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="121dp"
+                android:fontFamily="@font/abhaya_libre_extrabold"
+                android:gravity="center_horizontal|top"
+                android:text="Donation Type"
+                android:textAppearance="@style/donation_ty" />
+
+            <RadioGroup
+                android:layout_width="65dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="160dp">
+
+                <RadioButton
+                    android:id="@+id/ellipse_11"
+                    android:layout_width="30dp"
+                    android:layout_height="21.47dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="33dp" />
+
+                <RadioButton
+                    android:id="@+id/ellipse_12"
+                    android:layout_width="30dp"
+                    android:layout_height="21.47dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="12dp" />
+
+                <RadioButton
+                    android:id="@+id/ellipse_14"
+                    android:layout_width="30dp"
+                    android:layout_height="21.47dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginLeft="33dp"
+                    android:layout_marginTop="12dp" />
+
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/only_people"
+                android:layout_width="306dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="73dp"
+                android:layout_marginTop="158dp"
+                android:gravity="top"
+                android:text="Only People"
+                android:textAppearance="@style/only_people" />
+
+            <TextView
+                android:id="@+id/only_animal"
+                android:layout_width="306dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="73dp"
+                android:layout_marginTop="191dp"
+                android:gravity="top"
+                android:text="Only Animal"
+                android:textAppearance="@style/only_people" />
+
+            <TextView
+                android:id="@+id/both"
+                android:layout_width="306dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="73dp"
+                android:layout_marginTop="224dp"
+                android:gravity="top"
+                android:text="Both"
+                android:textAppearance="@style/only_people" />
+
+            <View
+                android:id="@+id/rectangle_3"
+                android:layout_width="370dp"
+                android:layout_height="129dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="300dp"
+                android:background="@drawable/rectangle_2_for_donationsac" />
+
+            <TextView
+                android:id="@+id/donation_wa"
+                android:layout_width="226dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="305dp"
+                android:layout_marginLeft="-15dp"
+                android:gravity="center_horizontal|top"
+                android:text="Donation Weight"
+                android:textAppearance="@style/donation_ty" />
+
+            <RadioGroup
+                android:id="@+id/weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="33dp"
+                android:layout_marginTop="345dp"
+                android:orientation="vertical">
+
+                <!-- First pair of radio buttons aligned vertically -->
+                <RadioButton
+                    android:id="@+id/ellipse_15"
+                    android:layout_width="30dp"
+                    android:layout_height="22dp" />
+
+                <RadioButton
+                    android:id="@+id/ellipse_16"
+                    android:layout_width="30dp"
+                    android:layout_height="22dp"
+                    android:layout_marginLeft="181dp"
+                    android:layout_marginTop="-21.50dp"/>
+
+                <!-- Second pair of radio buttons aligned horizontally -->
+                <RadioButton
+                    android:id="@+id/ellipse_17"
+                    android:layout_width="30dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="12dp" />
+
+                <RadioButton
+                    android:id="@+id/ellipse_18"
+                    android:layout_width="30dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="-21.50dp"
+                    android:layout_marginLeft="181dp"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/kg1_10"
+                android:layout_width="77dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="78dp"
+                android:layout_marginTop="343dp"
+                android:gravity="top"
+                android:text="1-10 Kg"
+                android:textAppearance="@style/only_people" />
+
+            <TextView
+                android:id="@+id/kg10_20"
+                android:layout_width="78dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="78dp"
+                android:layout_marginTop="377dp"
+                android:gravity="top"
+                android:text="10-20 Kg"
+                android:textAppearance="@style/only_people" />
+
+            <TextView
+                android:id="@+id/kg20_30"
+                android:layout_width="80dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="251dp"
+                android:layout_marginTop="343dp"
+                android:gravity="top"
+                android:text="20-30 Kg"
+                android:textAppearance="@style/only_people" />
+
+            <TextView
+                android:id="@+id/kg30_40"
+                android:layout_width="82dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="251dp"
+                android:layout_marginTop="377dp"
+                android:gravity="top"
+                android:text="30-40 Kg"
+                android:textAppearance="@style/only_people" />
+
+            <!-- new -->
+
+            <View
+                android:id="@+id/rectangle_4"
+                android:layout_width="370dp"
+                android:layout_height="129dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="12dp"
+                android:layout_marginTop="460dp"
+                android:background="@drawable/rectangle_2_for_donationsac" />
+
+            <TextView
+                android:id="@+id/donation_wa_2"
+                android:layout_width="226dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="465dp"
+                android:layout_marginLeft="-10dp"
+                android:gravity="center_horizontal|top"
+                android:text="Suggested Vehicle"
+                android:textAppearance="@style/donation_ty" />
+
+            <RadioGroup
+                android:id="@+id/weight_2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="33dp"
+                android:layout_marginTop="505dp"
+                android:orientation="vertical">
+
+                <RadioButton
+                    android:id="@+id/ellipse_19"
+                    android:layout_width="30dp"
+                    android:layout_height="22dp" />
+
+                <RadioButton
+                    android:id="@+id/ellipse_20"
+                    android:layout_width="30dp"
+                    android:layout_height="22dp"
+                    android:layout_marginLeft="181dp"
+                    android:layout_marginTop="-21.50dp"/>
+
+                <RadioButton
+                    android:id="@+id/ellipse_21"
+                    android:layout_width="30dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="12dp" />
+
+                <RadioButton
+                    android:id="@+id/ellipse_22"
+                    android:layout_width="30dp"
+                    android:layout_height="22dp"
+                    android:layout_marginTop="-21.50dp"
+                    android:layout_marginLeft="181dp"/>
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/kg1_10_2"
+                android:layout_width="77dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="78dp"
+                android:layout_marginTop="503dp"
+                android:gravity="top"
+                android:text="Bike"
+                android:textAppearance="@style/only_people" />
+
+            <TextView
+                android:id="@+id/kg10_20_2"
+                android:layout_width="78dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="78dp"
+                android:layout_marginTop="537dp"
+                android:gravity="top"
+                android:text="Car"
+                android:textAppearance="@style/only_people" />
+
+            <TextView
+                android:id="@+id/kg20_30_2"
+                android:layout_width="80dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="251dp"
+                android:layout_marginTop="503dp"
+                android:gravity="top"
+                android:text="Tempo"
+                android:textAppearance="@style/only_people" />
+
+            <TextView
+                android:id="@+id/kg30_40_2"
+                android:layout_width="78dp"
+                android:layout_height="24dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginLeft="251dp"
+                android:layout_marginTop="537dp"
+                android:gravity="top"
+                android:text="Van"
+                android:textAppearance="@style/only_people" />
+
+            <TextView
+                android:id="@+id/pin_code"
+                android:layout_width="226dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="605dp"
+                android:text="Pin Code"
+                android:textAppearance="@style/pin_code"
+                android:gravity="top"
+                />
+
+            <View
+                android:id="@+id/rectangle_pincode"
+                android:layout_width="370dp"
+                android:layout_height="67dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="640dp"
+                android:background="@drawable/rectangle_pincode"
+                />
+
+            <EditText
+                android:id="@+id/some_id"
+                android:layout_width="325dp"
+                android:layout_height="36dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="35dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="658dp"
+                android:textAppearance="@style/some_id"
+                android:inputType="number"
+                android:hint="Enter Your Pincode"
+                style="@style/NoUnderlineEditText"
+                android:gravity="center_vertical"
+                />
+
+            <TextView
+                android:id="@+id/address"
+                android:layout_width="226dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="720dp"
+                android:text="Address"
+                android:textAppearance="@style/pin_code"
+                android:gravity="top"
+                />
+
+            <View
+                android:id="@+id/rectangle_address"
+                android:layout_width="370dp"
+                android:layout_height="125dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="755dp"
+                android:background="@drawable/rectangle_address"
+                />
+
+            <EditText
+                android:id="@+id/address_text"
+                android:layout_width="340dp"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="760dp"
+                android:textAppearance="@style/address_text"
+                android:inputType="textMultiLine"
+                android:hint="Enter Address"
+                style="@style/NoUnderlineEditText"
+                android:gravity="top|start"
+                android:paddingStart="20dp"
+                android:paddingTop="20dp"
+                />
+
+            <TextView
+                android:id="@+id/contact_no_"
+                android:layout_width="226dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="896dp"
+                android:text="Contact No"
+                android:textAppearance="@style/pin_code"
+                android:gravity="top"
+                />
+
+            <View
+                android:id="@+id/rectangle_contactno"
+                android:layout_width="370dp"
+                android:layout_height="67dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="933dp"
+                android:background="@drawable/rectangle_pincode"
+                />
+
+            <EditText
+                android:id="@+id/some_mobileno"
+                android:layout_width="325dp"
+                android:layout_height="36dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="950dp"
+                android:textAppearance="@style/some_id"
+                android:textSize="22sp"
+                android:inputType="number"
+                android:hint="Enter Mobile Number"
+                style="@style/NoUnderlineEditText"
+                android:gravity="center_vertical"
+                />
+
+            <TextView
+                android:id="@+id/loc"
+                android:layout_width="226dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="1015dp"
+                android:text="Location"
+                android:textAppearance="@style/pin_code"
+                android:gravity="top"
+                />
+
+            <View
+                android:id="@+id/submit_btn"
+                android:layout_width="237dp"
+                android:layout_height="53dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="78dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="1209dp"
+                android:background="@drawable/submit_rectangle"
+                />
+
+            <TextView
+                android:id="@+id/submit"
+                android:layout_width="103dp"
+                android:layout_height="39dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="149.50dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="1218dp"
+                android:text="Submit"
+                android:textColor="#FFFFFF"
+                android:textSize="32sp"
+                android:lineHeight="38sp"
+                android:fontFamily="@font/abhaya_libre"
+                android:gravity="top"
+                />
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+</RelativeLayout>
