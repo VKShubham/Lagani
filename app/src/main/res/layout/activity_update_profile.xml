@@ -270,14 +270,15 @@
         android:gravity="center_vertical"
         />
 
-            <View
-                android:id="@+id/rectangle_8"
+            <ImageButton
+                android:id="@+id/update_btn"
                 android:layout_width="237dp"
                 android:layout_height="53dp"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="80dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="955dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/submit_rectangle"
                 />
 

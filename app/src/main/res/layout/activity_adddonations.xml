@@ -72,7 +72,8 @@
             <RadioGroup
                 android:layout_width="65dp"
                 android:layout_height="100dp"
-                android:layout_marginTop="160dp">
+                android:layout_marginTop="160dp"
+                android:id="@+id/donation_type">
 
                 <RadioButton
                     android:id="@+id/ellipse_11"
@@ -269,7 +270,7 @@
                 android:textAppearance="@style/donation_ty" />
 
             <RadioGroup
-                android:id="@+id/weight_2"
+                android:id="@+id/suggested_vechicle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="33dp"
