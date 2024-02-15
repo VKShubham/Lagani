@@ -1,0 +1,303 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/donators"
+    tools:context=".RegisterLogin.UpdateProfile">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+    <View
+        android:id="@+id/rectangle_1"
+        android:layout_width="395dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/rectangle_1"
+        />
+
+    <ImageView
+        android:id="@+id/burger_menu"
+        android:layout_width="44dp"
+        android:layout_height="20dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="5dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="30dp"
+        android:src="@drawable/back_arrow"
+        />
+
+    <TextView
+        android:id="@+id/lagni"
+        android:layout_width="284dp"
+        android:layout_height="57dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="55dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="18dp"
+        android:text="Update Profile"
+        android:textAppearance="@style/lagni"
+        android:gravity="center_horizontal|top"
+        />
+
+    <ImageView
+        android:id="@+id/ellipse_10"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="125dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="110dp"
+        android:src="@drawable/big_person_icon"
+        />
+
+    <TextView
+        android:id="@+id/upload_new_"
+        android:layout_width="187dp"
+        android:layout_height="50dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="105dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="265dp"
+        android:text="Upload new \nimage"
+        android:textAppearance="@style/pin_code"
+        android:gravity="center_horizontal|top"
+        />
+
+    <TextView
+        android:id="@+id/full_name"
+        android:layout_width="226dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="335dp"
+        android:text="Full Name"
+        android:textAppearance="@style/pin_code"
+        android:gravity="top"
+        />
+
+    <View
+        android:id="@+id/rectangle_3"
+        android:layout_width="370dp"
+        android:layout_height="67dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="370dp"
+        android:background="@drawable/rectangle_pincode"
+        />
+
+    <EditText
+        android:id="@+id/lagni_team"
+        android:layout_width="340dp"
+        android:layout_height="33dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="388dp"
+        style="@style/NoUnderlineEditText"
+        android:hint="Your Name"
+        android:textAppearance="@style/some_id"
+        android:gravity="center_vertical"
+        />
+
+    <!-- Mobile Number -->
+
+    <TextView
+        android:id="@+id/mobileno"
+        android:layout_width="226dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="455dp"
+        android:text="Mobile No"
+        android:textAppearance="@style/pin_code"
+        android:gravity="top"
+        />
+
+    <View
+        android:id="@+id/rectangle_4"
+        android:layout_width="370dp"
+        android:layout_height="67dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="490dp"
+        android:background="@drawable/rectangle_pincode"
+        />
+
+    <EditText
+        android:id="@+id/mno"
+        android:layout_width="340dp"
+        android:layout_height="33dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="508dp"
+        style="@style/NoUnderlineEditText"
+        android:hint="Enter Your Mobile"
+        android:textAppearance="@style/some_id"
+        android:gravity="center_vertical"
+        />
+
+    <!-- Email -->
+
+    <TextView
+        android:id="@+id/emailtext"
+        android:layout_width="226dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="577dp"
+        android:text="Email"
+        android:textAppearance="@style/pin_code"
+        android:gravity="top"
+        />
+
+    <View
+        android:id="@+id/rectangle_5"
+        android:layout_width="370dp"
+        android:layout_height="67dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="612dp"
+        android:background="@drawable/rectangle_pincode"
+        />
+
+    <TextView
+        android:id="@+id/email"
+        android:layout_width="340dp"
+        android:layout_height="33dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="630dp"
+        style="@style/NoUnderlineEditText"
+        android:text="shubhamvanani@gmail.com"
+        android:textAppearance="@style/some_id"
+        android:gravity="center_vertical"
+        />
+
+    <!-- old password -->
+
+    <TextView
+        android:id="@+id/oldpass_text"
+        android:layout_width="226dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="699dp"
+        android:text="Old Password"
+        android:textAppearance="@style/pin_code"
+        android:gravity="top"
+        />
+
+    <View
+        android:id="@+id/rectangle_6"
+        android:layout_width="370dp"
+        android:layout_height="67dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="734dp"
+        android:background="@drawable/rectangle_pincode"
+        />
+
+    <EditText
+        android:id="@+id/oldpass"
+        android:layout_width="340dp"
+        android:layout_height="33dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="752dp"
+        style="@style/NoUnderlineEditText"
+        android:hint="Your old Password"
+        android:textAppearance="@style/some_id"
+        android:gravity="center_vertical"
+        />
+
+    <!-- new password -->
+
+    <TextView
+        android:id="@+id/newpass_txt"
+        android:layout_width="226dp"
+        android:layout_height="25dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="15dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="821dp"
+        android:text="New Password"
+        android:textAppearance="@style/pin_code"
+        android:gravity="top"
+        />
+
+    <View
+        android:id="@+id/rectangle_7"
+        android:layout_width="370dp"
+        android:layout_height="67dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="12dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="856dp"
+        android:background="@drawable/rectangle_pincode"
+        />
+
+    <EditText
+        android:id="@+id/newpass"
+        android:layout_width="340dp"
+        android:layout_height="33dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="22dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="874dp"
+        style="@style/NoUnderlineEditText"
+        android:hint="Your New Password"
+        android:textAppearance="@style/some_id"
+        android:gravity="center_vertical"
+        />
+
+            <View
+                android:id="@+id/rectangle_8"
+                android:layout_width="237dp"
+                android:layout_height="53dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="80dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="955dp"
+                android:background="@drawable/submit_rectangle"
+                />
+
+            <TextView
+                android:id="@+id/update"
+                android:layout_width="103dp"
+                android:layout_height="39dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="150dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="962dp"
+                android:text="Update"
+                android:fontFamily="@font/abhaya_libre"
+                android:textSize="32sp"
+                android:lineHeight="38sp"
+                android:textColor="#FFFFFF"
+                android:gravity="top"
+                />
+
+        </RelativeLayout>
+    </ScrollView>
+
+</RelativeLayout>
