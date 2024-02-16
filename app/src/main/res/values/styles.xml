@@ -57,6 +57,21 @@
         <item name="android:textColor">#000000</item>
         <item name="fontFamily">@font/abhaya_libre</item>
     </style>
+    <style name="lotus_fly_r">
+        <item name="android:textSize">24sp</item>
+        <item name="android:textColor">#413F3F</item>
+        <item name="fontFamily">@font/abhaya_libre_extrabold</item>
+    </style>
+    <style name="donation_card">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">#646464</item>
+        <item name="fontFamily">@font/abhaya_libre_semibold</item>
+    </style>
+    <style name="both">
+        <item name="android:textSize">22sp</item>
+        <item name="android:textColor">#646464</item>
+        <item name="fontFamily">@font/abhaya_libre</item>
+    </style>
     <!--    <style name="carbon_RadioButton" parent="android:Widget.CompoundButton.RadioButton">-->
 <!--        <item name="android:paddingLeft">16dp</item>-->
 <!--        <item name="android:button">@null</item>-->

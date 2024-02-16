@@ -171,50 +171,6 @@
         android:gravity="center_horizontal|top"
         />
 
-    <View
-        android:id="@+id/rectangle_2"
-        android:layout_width="359dp"
-        android:layout_height="72dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="20dp"
-        android:layout_marginTop="270dp"
-        android:background="@drawable/rectangle_2" />
-
-    <ImageView
-        android:id="@+id/icon_donati"
-        android:layout_width="56dp"
-        android:layout_height="51.06dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="48dp"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/donationhistory"
-        android:layout_marginTop="280dp"
-        />
-
-    <View
-        android:id="@+id/line_1"
-        android:layout_width="2dp"
-        android:layout_height="33dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="140dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="287dp"
-        android:background="@drawable/line_8"
-        />
-
-    <TextView
-        android:id="@+id/donation_hi"
-        android:layout_width="230dp"
-        android:layout_height="72dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="145dp"
-        android:layout_marginTop="270dp"
-        android:gravity="center_horizontal|center_vertical"
-        android:text="Donation History"
-        android:textAppearance="@style/donation_hi" />
-
     <TextView
         android:id="@+id/donation"
         android:layout_width="94dp"
@@ -227,130 +183,15 @@
         android:text="donation"
         android:textAppearance="@style/donation"/>
 
-    <View
-        android:id="@+id/rectangle_7"
-        android:layout_width="359dp"
-        android:layout_height="72dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="19dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="377dp"
-        android:background="@drawable/rectangle_2"
-        />
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/avildonations"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="20dp"
+        android:layout_marginBottom="10dp"
+        android:layout_marginTop="235dp">
 
-    <ImageView
-        android:id="@+id/illustratio"
-        android:layout_width="47dp"
-        android:layout_height="58.42dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="52dp"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/updateprofile"
-        android:layout_marginTop="380dp"
-        />
 
-    <View
-        android:id="@+id/line_4"
-        android:layout_width="2dp"
-        android:layout_height="33dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="140dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="395dp"
-        android:background="@drawable/line_8"
-        />
+    </androidx.recyclerview.widget.RecyclerView>
 
-    <TextView
-        android:id="@+id/update_prof"
-        android:layout_width="230dp"
-        android:layout_height="72dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="145dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="375dp"
-        android:text="Update Profile"
-        android:textAppearance="@style/donation_hi"
-        android:gravity="center_horizontal|center_vertical"
-        />
-
-    <View
-        android:id="@+id/rectangle_8"
-        android:layout_width="359dp"
-        android:layout_height="72dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="18dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="479dp"
-        android:background="@drawable/rectangle_2"
-        />
-
-    <ImageView
-        android:id="@+id/illustration"
-        android:layout_width="58dp"
-        android:layout_height="38.2dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="48dp"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/maploc"
-        android:layout_marginTop="495dp"
-        />
-
-    <View
-        android:id="@+id/line_6"
-        android:layout_width="2dp"
-        android:layout_height="33dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="139dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="497dp"
-        android:background="@drawable/line_8"
-        />
-
-    <TextView
-        android:id="@+id/current_loc"
-        android:layout_width="230dp"
-        android:layout_height="72dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="144dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="477dp"
-        android:text="Current Location"
-        android:textAppearance="@style/donation_hi"
-        android:gravity="center_horizontal|center_vertical"
-        />
-
-    <View
-        android:id="@+id/rectangle_9"
-        android:layout_width="359dp"
-        android:layout_height="178dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="18dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="577dp"
-        android:background="@drawable/rectangle_5"
-        />
-
-    <ImageView
-        android:id="@+id/emoji_famil"
-        android:layout_width="93dp"
-        android:layout_height="129dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="64dp"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/familyemoji"
-        android:layout_marginTop="600dp"
-        />
-
-    <TextView
-        android:id="@+id/stay_connec"
-        android:layout_width="230dp"
-        android:layout_height="178dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="126dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="573dp"
-        android:text="Stay \nConnected \nwith \nus"
-        android:textAppearance="@style/stay_connec"
-        android:gravity="right|center_vertical"
-        />
 </RelativeLayout>
