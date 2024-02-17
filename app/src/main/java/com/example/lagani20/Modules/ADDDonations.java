@@ -4,9 +4,13 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
@@ -19,6 +23,10 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+
+import java.io.File;
 
 public class ADDDonations extends AppCompatActivity {
 
@@ -33,6 +41,9 @@ public class ADDDonations extends AppCompatActivity {
     FirebaseAuth fauth;
     FirebaseUser user;
     FirebaseDatabase db;
+    ImageView logo;
+    StorageReference storageReference;
+    FirebaseStorage firebaseStorage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,11 +57,21 @@ public class ADDDonations extends AppCompatActivity {
         contactno = findViewById(R.id.some_mobileno);
         submitbtn = findViewById(R.id.submit_btn);
         resturant = findViewById(R.id.res_name);
+        firebaseStorage = FirebaseStorage.getInstance();
+        logo = findViewById(R.id.ellipse_10);
 
         fauth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
         user  = fauth.getCurrentUser();
         BasicUtils utils = new BasicUtils();
+
+        storageReference = firebaseStorage.getReference().child("images/" + user.getUid());
+
+        storageReference.getFile(new File(getCacheDir(), "temp.jpg")).addOnSuccessListener(taskSnapshot -> {
+            Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
+            logo.setImageBitmap(bitmap);
+            //   bar.setVisibility(View.INVISIBLE);
+        }).addOnFailureListener(e -> Log.e("Firebase", "Failed to download image: " + e.getMessage()));
 
         submitbtn.setOnClickListener(new View.OnClickListener() {
             @Override
