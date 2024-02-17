@@ -28,6 +28,7 @@ public class ADDDonations extends AppCompatActivity {
     EditText pincode;
     EditText address;
     EditText contactno;
+    EditText resturant;
     View submitbtn;
     FirebaseAuth fauth;
     FirebaseUser user;
@@ -44,6 +45,7 @@ public class ADDDonations extends AppCompatActivity {
         address = findViewById(R.id.address_text);
         contactno = findViewById(R.id.some_mobileno);
         submitbtn = findViewById(R.id.submit_btn);
+        resturant = findViewById(R.id.res_name);
 
         fauth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
@@ -59,6 +61,7 @@ public class ADDDonations extends AppCompatActivity {
                 String pincode_txt;
                 String mobileno_txt;
                 String address_txt;
+                String resturant_txt;
 
                 if(!getdonationtype(donationtype).equals("null") && !getdonationweight(donationweight).equals("null") && !getsuggestedvehicle(suggestedvehicle).equals("null"))
                 {
@@ -68,16 +71,19 @@ public class ADDDonations extends AppCompatActivity {
                     pincode_txt = pincode.getText().toString();
                     mobileno_txt = contactno.getText().toString();
                     address_txt = address.getText().toString();
+                    resturant_txt = resturant.getText().toString();
                     if (pincode_txt.isEmpty()) {
                         Toast.makeText(ADDDonations.this, "Please Enter Pin Code", Toast.LENGTH_SHORT).show();
                     } else if (mobileno_txt.length() != 10) { // Wrong Logic (Correct in simple way need further ref)
                         Toast.makeText(ADDDonations.this, "Please Enter Valid Mobile Number", Toast.LENGTH_SHORT).show();
                     } else if(address_txt.isEmpty()){
                         Toast.makeText(ADDDonations.this, "Please Enter Address", Toast.LENGTH_SHORT).show();
+                    } else if (resturant_txt.isEmpty()) {
+
                     }
                     else
                     {
-                        adddetailstodatabase(donationtype_txt,donationweight_txt,suggestedvehicle_txt,pincode_txt,address_txt,mobileno_txt,user.getUid());
+                        adddetailstodatabase(donationtype_txt,donationweight_txt,suggestedvehicle_txt,pincode_txt,address_txt,mobileno_txt,user.getUid(),resturant_txt);
                     }
                 }
                 else
@@ -88,9 +94,9 @@ public class ADDDonations extends AppCompatActivity {
         });
     }
 
-    private void adddetailstodatabase(String donationtype, String donationweight, String suggestedvehicle, String pincode, String mobileno, String address, String userid)
+    private void adddetailstodatabase(String donationtype, String donationweight, String suggestedvehicle, String pincode, String mobileno, String address, String userid, String resturant)
     {
-            final Donations donations = new Donations(donationtype,donationweight,suggestedvehicle,pincode,mobileno,address,userid);
+            final Donations donations = new Donations(donationtype,donationweight,suggestedvehicle,pincode,mobileno,address,userid,resturant);
             final String key = db.getReference().push().getKey();
 
             db.getReference("Donations")

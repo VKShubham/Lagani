@@ -472,13 +472,53 @@
                 />
 
             <TextView
+                android:id="@+id/rename"
+                android:layout_width="226dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="1018dp"
+                android:text="Resturant Name"
+                android:textAppearance="@style/pin_code"
+                android:gravity="top"
+                />
+
+            <View
+                android:id="@+id/rectangle_resname"
+                android:layout_width="370dp"
+                android:layout_height="67dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="1055dp"
+                android:background="@drawable/rectangle_pincode"
+                />
+
+            <EditText
+                android:id="@+id/res_name"
+                android:layout_width="325dp"
+                android:layout_height="36dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="30dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="1072dp"
+                android:textAppearance="@style/some_id"
+                android:textSize="22sp"
+                android:inputType="text"
+                android:hint="Enter Resturant Name"
+                style="@style/NoUnderlineEditText"
+                android:gravity="center_vertical"
+                />
+
+            <TextView
                 android:id="@+id/loc"
                 android:layout_width="226dp"
                 android:layout_height="25dp"
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="12dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="1015dp"
+                android:layout_marginTop="1130dp"
                 android:text="Location"
                 android:textAppearance="@style/pin_code"
                 android:gravity="top"

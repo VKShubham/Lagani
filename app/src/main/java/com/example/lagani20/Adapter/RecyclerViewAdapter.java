@@ -42,6 +42,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         holder.donationweight.setText(donations.getDonationweight());
         holder.pincode.setText(donations.getPincode());
         holder.vehicletype.setText(donations.getSuggestedvehicle());
+        holder.resturantname.setText(donations.getResturant());
     }
 
     @Override
@@ -68,7 +69,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             pincode = itemView.findViewById(R.id.pincode_card);
             address = itemView.findViewById(R.id.address_card);
             mobile = itemView.findViewById(R.id.contact_card);
-           // resturantname = itemView.findViewById(R.id.res_name);
+            resturantname = itemView.findViewById(R.id.res_name);
             vehicletype = itemView.findViewById(R.id.vehicle_card);
 
         }

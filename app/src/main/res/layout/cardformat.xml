@@ -8,7 +8,7 @@
     app:cardCornerRadius="8dp">
 
     <TextView
-        android:id="@+id/lotus_fly_r"
+        android:id="@+id/res_name"
         android:layout_width="319dp"
         android:layout_height="29dp"
         android:layout_alignParentLeft="true"
@@ -54,7 +54,7 @@
 
     <TextView
         android:id="@+id/donation_we"
-        android:layout_width="168dp"
+        android:layout_width="175dp"
         android:layout_height="25dp"
         android:layout_marginLeft="5dp"
         android:text="Donation Weight  :"
@@ -161,4 +161,15 @@
         android:textAppearance="@style/both"
         android:gravity="top"
         />
+
+    <Button
+        android:layout_width="235dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="320dp"
+        android:text="Accept Donation"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/abhaya_libre_semibold"
+        android:textSize="17sp"
+        android:id="@+id/accpet_btn"/>
 </androidx.cardview.widget.CardView>

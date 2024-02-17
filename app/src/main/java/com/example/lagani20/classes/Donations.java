@@ -10,10 +10,11 @@ public class Donations implements Serializable {
     private String address;
     private String mobileno;
     private String userid;
+    private  String resturant;
 
     public Donations() {}
 
-    public Donations(String donationtype, String donationweight, String suggestedvehicle, String pincode, String address, String mobileno, String userid) {
+    public Donations(String donationtype, String donationweight, String suggestedvehicle, String pincode, String address, String mobileno, String userid, String resturant) {
         this.donationtype = donationtype;
         this.donationweight = donationweight;
         this.suggestedvehicle = suggestedvehicle;
@@ -21,6 +22,7 @@ public class Donations implements Serializable {
         this.address = address;
         this.mobileno = mobileno;
         this.userid = userid;
+        this.resturant = resturant;
     }
 
     public String getDonationtype() {
@@ -77,5 +79,13 @@ public class Donations implements Serializable {
 
     public void setUserid(String userid) {
         this.userid = userid;
+    }
+
+    public String getResturant() {
+        return resturant;
+    }
+
+    public void setResturant(String resturant) {
+        this.resturant = resturant;
     }
 }
