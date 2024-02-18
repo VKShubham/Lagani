@@ -60,7 +60,7 @@ public class RiderDashboard extends AppCompatActivity {
         recyclerView.setHasFixedSize(true);
         list = new ArrayList<>();
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        personlogo = findViewById(R.id.person_logo);
+        personlogo = findViewById(R.id.logo);
         firebaseStorage = FirebaseStorage.getInstance();
         databaseReference = firebaseStorage.getReference().child("images" + user.getUid());
 

@@ -143,7 +143,7 @@ public class UpdateProfile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 onBackPressed();
-                overridePendingTransition(R.anim.slide_out_right,R.anim.slide_in_left);
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
             }
         });
 

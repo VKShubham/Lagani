@@ -58,7 +58,7 @@ public class ADDDonations extends AppCompatActivity {
         submitbtn = findViewById(R.id.submit_btn);
         resturant = findViewById(R.id.res_name);
         firebaseStorage = FirebaseStorage.getInstance();
-        logo = findViewById(R.id.ellipse_10);
+        logo = findViewById(R.id.logo);
 
         fauth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();

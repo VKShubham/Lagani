@@ -9,49 +9,7 @@
     android:elevation="23dp"
     android:background="@drawable/donators">
 
-    <View
-        android:id="@+id/rectangle_1"
-        android:layout_width="395dp"
-        android:layout_height="80dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:background="@drawable/rectangle_1"
-        />
-
-    <ImageView
-        android:id="@+id/burger_menu"
-        android:layout_width="44dp"
-        android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="15dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="30dp"
-        android:src="@drawable/menuicon"
-        />
-
-    <TextView
-        android:id="@+id/lagni"
-        android:layout_width="284dp"
-        android:layout_height="57dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="55dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="18dp"
-        android:text="Lagni"
-        android:textAppearance="@style/lagni"
-        android:gravity="center_horizontal|top"
-        />
-
-    <ImageView
-        android:id="@+id/person_logo"
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="345dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="18dp"
-        android:src="@drawable/persosndashlogo"
-        />
+    <include layout="@layout/toolbar"/>
 
     <ImageView
         android:id="@+id/rectangle_3"

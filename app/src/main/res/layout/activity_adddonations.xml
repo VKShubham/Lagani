@@ -7,60 +7,18 @@
     tools:context=".Modules.ADDDonations"
     android:background="@drawable/donators">
 
+    <include layout="@layout/toolbar"
+        android:id="@+id/toolbar"/>
+
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_marginTop="100dp">
 
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToOutline="true">
-
-            <View
-                android:id="@+id/rectangle_1"
-                android:layout_width="395dp"
-                android:layout_height="80dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:background="@drawable/rectangle_1" />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                app:cardCornerRadius="250dp"
-                android:layout_marginLeft="340dp"
-                android:layout_marginTop="20dp"
-                app:cardBackgroundColor="@color/white">
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                app:cardCornerRadius="250dp"
-                android:layout_gravity="center">
-            <ImageView
-                android:id="@+id/ellipse_10"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:scaleType="centerCrop"
-                android:src="@drawable/persosndashlogo" />
-
-            </androidx.cardview.widget.CardView>
-
-            </androidx.cardview.widget.CardView>
-
-            <TextView
-                android:id="@+id/lagni"
-                android:layout_width="284dp"
-                android:layout_height="57dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="55dp"
-                android:layout_marginTop="18dp"
-                android:gravity="center_horizontal|top"
-                android:text="Lagni"
-                android:textAppearance="@style/lagni" />
 
             <View
                 android:id="@+id/rectangle_2"
@@ -69,7 +27,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="12dp"
-                android:layout_marginTop="115dp"
+                android:layout_marginTop="15dp"
                 android:background="@drawable/rectangle_2_for_donationsac" />
 
             <TextView
@@ -79,7 +37,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="8dp"
-                android:layout_marginTop="121dp"
+                android:layout_marginTop="21dp"
                 android:fontFamily="@font/abhaya_libre_extrabold"
                 android:gravity="center_horizontal|top"
                 android:text="Donation Type"
@@ -88,7 +46,7 @@
             <RadioGroup
                 android:layout_width="65dp"
                 android:layout_height="100dp"
-                android:layout_marginTop="160dp"
+                android:layout_marginTop="60dp"
                 android:id="@+id/donation_type">
 
                 <RadioButton
@@ -126,7 +84,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="73dp"
-                android:layout_marginTop="158dp"
+                android:layout_marginTop="58dp"
                 android:gravity="top"
                 android:text="Only People"
                 android:textAppearance="@style/only_people" />
@@ -138,7 +96,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="73dp"
-                android:layout_marginTop="191dp"
+                android:layout_marginTop="91dp"
                 android:gravity="top"
                 android:text="Only Animal"
                 android:textAppearance="@style/only_people" />
@@ -150,7 +108,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="73dp"
-                android:layout_marginTop="224dp"
+                android:layout_marginTop="124dp"
                 android:gravity="top"
                 android:text="Both"
                 android:textAppearance="@style/only_people" />
@@ -162,7 +120,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="12dp"
-                android:layout_marginTop="300dp"
+                android:layout_marginTop="200dp"
                 android:background="@drawable/rectangle_2_for_donationsac" />
 
             <TextView
@@ -171,7 +129,7 @@
                 android:layout_height="25dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="305dp"
+                android:layout_marginTop="205dp"
                 android:layout_marginLeft="-15dp"
                 android:gravity="center_horizontal|top"
                 android:text="Donation Weight"
@@ -182,7 +140,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="33dp"
-                android:layout_marginTop="345dp"
+                android:layout_marginTop="245dp"
                 android:orientation="vertical">
 
                 <!-- First pair of radio buttons aligned vertically -->
@@ -220,7 +178,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="78dp"
-                android:layout_marginTop="343dp"
+                android:layout_marginTop="243dp"
                 android:gravity="top"
                 android:text="1-10 Kg"
                 android:textAppearance="@style/only_people" />
@@ -232,7 +190,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="78dp"
-                android:layout_marginTop="377dp"
+                android:layout_marginTop="277dp"
                 android:gravity="top"
                 android:text="10-20 Kg"
                 android:textAppearance="@style/only_people" />
@@ -244,7 +202,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="251dp"
-                android:layout_marginTop="343dp"
+                android:layout_marginTop="243dp"
                 android:gravity="top"
                 android:text="20-30 Kg"
                 android:textAppearance="@style/only_people" />
@@ -256,7 +214,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="251dp"
-                android:layout_marginTop="377dp"
+                android:layout_marginTop="277dp"
                 android:gravity="top"
                 android:text="30-40 Kg"
                 android:textAppearance="@style/only_people" />
@@ -270,7 +228,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="12dp"
-                android:layout_marginTop="460dp"
+                android:layout_marginTop="360dp"
                 android:background="@drawable/rectangle_2_for_donationsac" />
 
             <TextView
@@ -279,7 +237,7 @@
                 android:layout_height="25dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="465dp"
+                android:layout_marginTop="365dp"
                 android:layout_marginLeft="-10dp"
                 android:gravity="center_horizontal|top"
                 android:text="Suggested Vehicle"
@@ -290,7 +248,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="33dp"
-                android:layout_marginTop="505dp"
+                android:layout_marginTop="405dp"
                 android:orientation="vertical">
 
                 <RadioButton
@@ -326,7 +284,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="78dp"
-                android:layout_marginTop="503dp"
+                android:layout_marginTop="403dp"
                 android:gravity="top"
                 android:text="Bike"
                 android:textAppearance="@style/only_people" />
@@ -338,7 +296,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="78dp"
-                android:layout_marginTop="537dp"
+                android:layout_marginTop="437dp"
                 android:gravity="top"
                 android:text="Car"
                 android:textAppearance="@style/only_people" />
@@ -350,7 +308,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="251dp"
-                android:layout_marginTop="503dp"
+                android:layout_marginTop="403dp"
                 android:gravity="top"
                 android:text="Tempo"
                 android:textAppearance="@style/only_people" />
@@ -362,7 +320,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentTop="true"
                 android:layout_marginLeft="251dp"
-                android:layout_marginTop="537dp"
+                android:layout_marginTop="437dp"
                 android:gravity="top"
                 android:text="Van"
                 android:textAppearance="@style/only_people" />
@@ -374,7 +332,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="12dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="605dp"
+                android:layout_marginTop="505dp"
                 android:text="Pin Code"
                 android:textAppearance="@style/pin_code"
                 android:gravity="top"
@@ -387,7 +345,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="12dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="640dp"
+                android:layout_marginTop="540dp"
                 android:background="@drawable/rectangle_pincode"
                 />
 
@@ -398,7 +356,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="35dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="658dp"
+                android:layout_marginTop="558dp"
                 android:textAppearance="@style/some_id"
                 android:inputType="number"
                 android:hint="Enter Your Pincode"
@@ -413,7 +371,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="12dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="720dp"
+                android:layout_marginTop="620dp"
                 android:text="Address"
                 android:textAppearance="@style/pin_code"
                 android:gravity="top"
@@ -426,7 +384,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="12dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="755dp"
+                android:layout_marginTop="655dp"
                 android:background="@drawable/rectangle_address"
                 />
 
@@ -437,7 +395,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="30dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="760dp"
+                android:layout_marginTop="660dp"
                 android:textAppearance="@style/address_text"
                 android:inputType="textMultiLine"
                 android:hint="Enter Address"
@@ -454,7 +412,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="12dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="896dp"
+                android:layout_marginTop="796dp"
                 android:text="Contact No"
                 android:textAppearance="@style/pin_code"
                 android:gravity="top"
@@ -467,7 +425,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="12dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="933dp"
+                android:layout_marginTop="833dp"
                 android:background="@drawable/rectangle_pincode"
                 />
 
@@ -478,7 +436,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="30dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="950dp"
+                android:layout_marginTop="850dp"
                 android:textAppearance="@style/some_id"
                 android:textSize="22sp"
                 android:inputType="number"
@@ -494,7 +452,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="12dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="1018dp"
+                android:layout_marginTop="918dp"
                 android:text="Resturant Name"
                 android:textAppearance="@style/pin_code"
                 android:gravity="top"
@@ -507,7 +465,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="12dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="1055dp"
+                android:layout_marginTop="955dp"
                 android:background="@drawable/rectangle_pincode"
                 />
 
@@ -518,7 +476,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="30dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="1072dp"
+                android:layout_marginTop="972dp"
                 android:textAppearance="@style/some_id"
                 android:textSize="22sp"
                 android:inputType="text"
@@ -534,7 +492,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="12dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="1130dp"
+                android:layout_marginTop="1030dp"
                 android:text="Location"
                 android:textAppearance="@style/pin_code"
                 android:gravity="top"
@@ -547,7 +505,8 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="78dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="1209dp"
+                android:layout_marginTop="1109dp"
+                android:layout_marginBottom="10dp"
                 android:background="@drawable/submit_rectangle"
                 />
 
@@ -558,7 +517,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="149.50dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="1218dp"
+                android:layout_marginTop="1118dp"
                 android:text="Submit"
                 android:textColor="#FFFFFF"
                 android:textSize="32sp"
