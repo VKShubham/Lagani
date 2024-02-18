@@ -87,14 +87,15 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             if (position != RecyclerView.NO_POSITION) {
                 Donations donations = list.get(position);
                 donations.setStatus("1");
-                // Update the status in the Firebase database
                 firebaseDatabase.getReference()
                         .child("Donations")
-                        .child(donations.getDonationid()) // Assuming you have an ID for each donation
+                        .child(donations.getDonationid())
                         .setValue(donations)
                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                             @Override
                             public void onSuccess(Void unused) {
+                                list.remove(position);
+                                notifyItemRemoved(position);
                                 Toast.makeText(context, "Order Accepted", Toast.LENGTH_SHORT).show();
                             }
                         });

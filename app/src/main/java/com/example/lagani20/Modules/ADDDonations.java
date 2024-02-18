@@ -42,7 +42,7 @@ public class ADDDonations extends AppCompatActivity {
     FirebaseUser user;
     FirebaseDatabase db;
     ImageView logo;
-
+    ImageView backtn;
     StorageReference storageReference;
     FirebaseStorage firebaseStorage;
     @Override
@@ -60,6 +60,7 @@ public class ADDDonations extends AppCompatActivity {
         resturant = findViewById(R.id.res_name);
         firebaseStorage = FirebaseStorage.getInstance();
         logo = findViewById(R.id.logo);
+        backtn = findViewById(R.id.back_btn);
 
         fauth = FirebaseAuth.getInstance();
         db = FirebaseDatabase.getInstance();
@@ -73,6 +74,14 @@ public class ADDDonations extends AppCompatActivity {
             logo.setImageBitmap(bitmap);
             //   bar.setVisibility(View.INVISIBLE);
         }).addOnFailureListener(e -> Log.e("Firebase", "Failed to download image: " + e.getMessage()));
+
+        backtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+            }
+        });
 
         submitbtn.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -7,21 +7,30 @@
     tools:context=".Modules.Accepted_Donations"
     android:background="@drawable/donators">
 
-    <include layout="@layout/toolbar"/>
+    <include layout="@layout/toolbar_withbackbtn"/>
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Orders : "
         android:fontFamily="@font/abhaya_libre_extrabold"
-        android:textSize="22sp"
+        android:textSize="32sp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="100dp"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="No Orders"
+        android:fontFamily="@font/abhaya_libre_extrabold"
+        android:textSize="42sp"
+        android:layout_marginStart="120dp"
+        android:layout_marginTop="330dp"/>
 
     <androidx.recyclerview.widget.RecyclerView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="150dp"
         android:layout_marginStart="22dp"
         android:layout_marginBottom="10dp"
         android:id="@+id/view_2"

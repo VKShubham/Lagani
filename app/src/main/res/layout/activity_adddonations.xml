@@ -7,8 +7,8 @@
     tools:context=".Modules.ADDDonations"
     android:background="@drawable/donators">
 
-    <include layout="@layout/toolbar"
-        android:id="@+id/toolbar"/>
+    <include layout="@layout/toolbar_withbackbtn"
+        android:id="@+id/toolbar_2"/>
 
     <ScrollView
         android:layout_width="match_parent"

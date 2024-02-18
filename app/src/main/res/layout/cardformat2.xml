@@ -165,7 +165,7 @@
     <Button
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_marginStart="20dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="320dp"
         android:text="Delivered"
         android:layout_marginBottom="10dp"
@@ -176,7 +176,7 @@
     <Button
         android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_marginStart="190dp"
+        android:layout_marginStart="183dp"
         android:layout_marginTop="320dp"
         android:text="Get Direction"
         android:layout_marginBottom="10dp"

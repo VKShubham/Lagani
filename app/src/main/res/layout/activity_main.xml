@@ -241,7 +241,7 @@
         android:layout_height="39dp"
         android:layout_centerHorizontal="true"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="534dp"
+        android:layout_marginTop="520dp"
         android:background="@drawable/frame_16"
         android:elevation="4dp">
 
@@ -262,14 +262,19 @@
 
     <ImageView
         android:id="@+id/image_11"
-        android:layout_width="361dp"
-        android:layout_height="312dp"
+        android:layout_width="wrap_content"
+        android:layout_height="304dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="33dp"
-        android:layout_marginTop="588dp"
-        android:layout_marginBottom="-7dp"
-        android:src="@drawable/personlogin" />
+        android:layout_marginStart="0dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginTop="555dp"
+        android:layout_marginEnd="-2dp"
+        android:layout_marginBottom="-10dp"
+        android:src="@drawable/loginlower" />
+
 </RelativeLayout>
