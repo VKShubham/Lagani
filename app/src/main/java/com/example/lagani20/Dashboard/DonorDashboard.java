@@ -2,12 +2,17 @@ package com.example.lagani20.Dashboard;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -33,6 +38,7 @@ public class DonorDashboard extends AppCompatActivity {
     FirebaseUser user;
     FirebaseAuth auth;
     ImageView logo;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,19 +53,24 @@ public class DonorDashboard extends AppCompatActivity {
         storageReference = firebaseStorage.getReference().child("images/" + user.getUid());
         logo = findViewById(R.id.logo);
 
-        storageReference.getFile(new File(getCacheDir(), "temp.jpg")).addOnSuccessListener(taskSnapshot -> {
-            Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
-            logo.setImageBitmap(bitmap);
-            //   bar.setVisibility(View.INVISIBLE);
-        }).addOnFailureListener(e -> Log.e("Firebase", "Failed to download image: " + e.getMessage()));
+
+        Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
+        logo.setImageBitmap(bitmap);
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 FirebaseAuth.getInstance().signOut();
                 Toast.makeText(DonorDashboard.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(DonorDashboard.this,MainActivity.class));
-                overridePendingTransition(R.anim.push_up_in,R.anim.push_down_out);
+                startActivity(new Intent(DonorDashboard.this, MainActivity.class));
+                overridePendingTransition(R.anim.push_up_in, R.anim.push_down_out);
+            }
+        });
+
+        logo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                openProfileDetailsDialog(view);
             }
         });
 
@@ -67,7 +78,7 @@ public class DonorDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(DonorDashboard.this, ADDDonations.class));
-                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
 
@@ -75,8 +86,32 @@ public class DonorDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(DonorDashboard.this, UpdateProfile.class));
-                overridePendingTransition(R.anim.slide_in_left,android.R.anim.slide_out_right);
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
     }
+
+    private void openProfileDetailsDialog(View anchorView) {
+
+        Dialog dialog = new Dialog(this);
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        dialog.setContentView(R.layout.profile_dialog);
+
+
+        ImageView image = dialog.findViewById(R.id.person_img);
+
+        Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
+
+        if (image != null && bitmap != null) {
+            image.setImageBitmap(bitmap);
+        } else {
+            Log.e("ProfileDialog", "ImageView or Bitmap is null");
+        }
+        Window window = dialog.getWindow();
+        if (window != null) {
+            window.setBackgroundDrawableResource(android.R.color.transparent);
+            dialog.show();
+        }
+    }
+
 }

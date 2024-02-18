@@ -80,7 +80,9 @@ public class UpdateProfile extends AppCompatActivity {
 
         ref.putFile(selectedImageUri).addOnSuccessListener(taskSnapshot -> {
             progressDialog.dismiss();
-            Toast.makeText(this, "Image Uploaded Successfully", Toast.LENGTH_SHORT).show();
+            ref.getFile(new File(getCacheDir(), "temp.jpg")).addOnSuccessListener(taskSnapshot1 -> {
+                Toast.makeText(this, "Image Uploaded Successfully", Toast.LENGTH_SHORT).show();
+            });
         }).addOnFailureListener(e -> {
             progressDialog.dismiss();
             Toast.makeText(this, "Photo Is Not Uploaded", Toast.LENGTH_SHORT).show();
