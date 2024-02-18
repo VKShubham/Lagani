@@ -42,6 +42,7 @@ public class ADDDonations extends AppCompatActivity {
     FirebaseUser user;
     FirebaseDatabase db;
     ImageView logo;
+
     StorageReference storageReference;
     FirebaseStorage firebaseStorage;
     @Override
@@ -117,8 +118,8 @@ public class ADDDonations extends AppCompatActivity {
 
     private void adddetailstodatabase(String donationtype, String donationweight, String suggestedvehicle, String pincode, String mobileno, String address, String userid, String resturant)
     {
-            final Donations donations = new Donations(donationtype,donationweight,suggestedvehicle,pincode,mobileno,address,userid,resturant);
             final String key = db.getReference().push().getKey();
+            final Donations donations = new Donations(donationtype,donationweight,suggestedvehicle,pincode,mobileno,address,userid,resturant,"0",key);
 
             db.getReference("Donations")
                     .child(key)

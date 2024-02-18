@@ -16,6 +16,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.lagani20.Adapter.RecyclerViewAdapter;
+import com.example.lagani20.Modules.Accepted_Donations;
 import com.example.lagani20.R;
 import com.example.lagani20.RegisterLogin.MainActivity;
 import com.example.lagani20.RegisterLogin.UpdateProfile;
@@ -47,11 +48,13 @@ public class RiderDashboard extends AppCompatActivity {
     ImageView personlogo;
     FirebaseStorage firebaseStorage;
     StorageReference databaseReference;
+    ImageView accpeteddonation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rider_dashboard);
 
+        accpeteddonation = findViewById(R.id.rectangle_3);
         logout = findViewById(R.id.rectangle_6);
         recyclerView = findViewById(R.id.avildonations);
         db = FirebaseDatabase.getInstance();
@@ -80,14 +83,25 @@ public class RiderDashboard extends AppCompatActivity {
             }
         });
 
+        accpeteddonation.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RiderDashboard.this, Accepted_Donations.class));
+                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
+            }
+        });
+
 
         db.getReference()
                 .child("Donations").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                         for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                             Donations donations = dataSnapshot.getValue(Donations.class);
-                            list.add(donations);
+                            if("0".equals(donations.getStatus())){
+                                list.add(donations);
+                            }
                         }
                         recyclerViewAdapter = new RecyclerViewAdapter(RiderDashboard.this, list);
                         recyclerView.setAdapter(recyclerViewAdapter);

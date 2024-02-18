@@ -4,22 +4,29 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lagani20.R;
 import com.example.lagani20.classes.Donations;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
 
+import java.io.BufferedReader;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
 
     private Context context;
     private List<Donations> list;
+    private FirebaseDatabase firebaseDatabase;
+
 
     public RecyclerViewAdapter(Context context, List<Donations> list) {
         this.context = context;
@@ -59,11 +66,13 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public TextView mobile;
         public TextView resturantname;
         public TextView vehicletype;
+        public Button accpetbtn;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
-            itemView.setOnClickListener(this);
-
+            accpetbtn = itemView.findViewById(R.id.accpet_btn);
+            accpetbtn.setOnClickListener(this);
+            firebaseDatabase = FirebaseDatabase.getInstance();
             donationtype = itemView.findViewById(R.id.type);
             donationweight = itemView.findViewById(R.id.weight_card);
             pincode = itemView.findViewById(R.id.pincode_card);
@@ -71,13 +80,25 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             mobile = itemView.findViewById(R.id.contact_card);
             resturantname = itemView.findViewById(R.id.res_name);
             vehicletype = itemView.findViewById(R.id.vehicle_card);
-
         }
 
-        @Override
         public void onClick(View view) {
-
+            int position = getAdapterPosition();
+            if (position != RecyclerView.NO_POSITION) {
+                Donations donations = list.get(position);
+                donations.setStatus("1");
+                // Update the status in the Firebase database
+                firebaseDatabase.getReference()
+                        .child("Donations")
+                        .child(donations.getDonationid()) // Assuming you have an ID for each donation
+                        .setValue(donations)
+                        .addOnSuccessListener(new OnSuccessListener<Void>() {
+                            @Override
+                            public void onSuccess(Void unused) {
+                                Toast.makeText(context, "Order Accepted", Toast.LENGTH_SHORT).show();
+                            }
+                        });
+            }
         }
     }
 }
-
