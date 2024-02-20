@@ -27,6 +27,8 @@ import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
+import java.util.Random;
+import java.util.UUID;
 
 public class ADDDonations extends AppCompatActivity {
 
@@ -125,10 +127,18 @@ public class ADDDonations extends AppCompatActivity {
         });
     }
 
+    public static String generateUniqueNumber() {
+        long timestamp = System.currentTimeMillis();
+        int lastFourDigits = (int) (timestamp % 10000);
+        lastFourDigits = Math.abs(lastFourDigits);
+        String uniqueNumber = String.format("%04d", lastFourDigits);
+        return uniqueNumber;
+    }
+
     private void adddetailstodatabase(String donationtype, String donationweight, String suggestedvehicle, String pincode, String mobileno, String address, String userid, String resturant)
     {
             final String key = db.getReference().push().getKey();
-            final Donations donations = new Donations(donationtype,donationweight,suggestedvehicle,pincode,mobileno,address,userid,resturant,"0",key);
+            final Donations donations = new Donations(generateUniqueNumber(),donationtype,donationweight,suggestedvehicle,pincode,mobileno,address,userid,resturant,"0",key);
 
             db.getReference("Donations")
                     .child(key)

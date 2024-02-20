@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="8dp"
+    android:layout_marginBottom="8dp"
+    app:cardCornerRadius="8dp">
+
+    <TextView
+        android:id="@+id/res_name"
+        android:layout_width="80dp"
+        android:layout_height="29dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:layout_marginStart="3dp"
+        android:text="Order #"
+        android:textAppearance="@style/lotus_fly_r"
+        />
+
+    <TextView
+        android:id="@+id/order_no"
+        android:layout_width="80dp"
+        android:layout_height="29dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="15dp"
+        android:text="1234"
+        android:textSize="22sp"
+        android:layout_marginStart="78dp"
+        android:textAppearance="@style/lotus_fly_r"
+        />
+
+    <ImageView
+        android:id="@+id/status_color"
+        android:layout_width="19dp"
+        android:layout_height="17.48dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="205dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/greenround"
+        android:background="@drawable/ellipse_17" />
+
+    <TextView
+        android:id="@+id/status_text"
+        android:layout_width="100dp"
+        android:layout_height="29dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="230dp"
+        android:layout_marginTop="15dp"
+        android:text="Status"
+        android:textAppearance="@style/lotus_fly_r"
+        />
+
+    <View
+        android:id="@+id/line_1"
+        android:layout_width="323dp"
+        android:layout_height="2dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="55dp"
+        android:background="@drawable/line_17"
+        />
+
+    <TextView
+        android:id="@+id/donation_ty"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginLeft="5dp"
+        android:text="Donation Type :"
+        android:textAppearance="@style/donation_card"
+        android:gravity="top"
+        />
+
+
+    <TextView
+        android:id="@+id/type_3"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:text="TextView"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="70dp"
+        android:textAppearance="@style/both"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/donation_we"
+        android:layout_width="175dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="5dp"
+        android:text="Donation Weight  :"
+        android:textAppearance="@style/donation_card"
+        android:gravity="top"
+        android:layout_marginTop="100dp"
+        />
+
+    <TextView
+        android:id="@+id/weight_card_3"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="100dp"
+        android:text="TextView"
+        android:layout_marginLeft="190dp"
+        android:textAppearance="@style/both"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/donation_we2"
+        android:layout_width="168dp"
+        android:layout_height="25dp"
+        android:text="Pin code :"
+        android:layout_marginLeft="5dp"
+        android:textAppearance="@style/donation_card"
+        android:gravity="top"
+        android:layout_marginTop="130dp"
+        />
+
+    <TextView
+        android:id="@+id/pincode_card_3"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="130dp"
+        android:text="TextView"
+        android:layout_marginLeft="190dp"
+        android:textAppearance="@style/both"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/donation_we22"
+        android:layout_width="168dp"
+        android:layout_height="25dp"
+        android:text="Address :"
+        android:layout_marginLeft="5dp"
+        android:textAppearance="@style/donation_card"
+        android:gravity="top"
+        android:layout_marginTop="160dp"
+        />
+
+    <TextView
+        android:id="@+id/address_card_3"
+        android:layout_width="160dp"
+        android:layout_height="75dp"
+        android:layout_marginTop="160dp"
+        android:text="TextView"
+        android:layout_marginLeft="190dp"
+        android:textAppearance="@style/both"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/donation_we223"
+        android:layout_width="168dp"
+        android:layout_height="25dp"
+        android:text="Contact No :"
+        android:textAppearance="@style/donation_card"
+        android:gravity="top"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="240dp"
+        />
+
+    <TextView
+        android:id="@+id/contact_card_3"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="240dp"
+        android:text="TextView"
+        android:layout_marginLeft="190dp"
+        android:textAppearance="@style/both"
+        android:gravity="top"
+        />
+
+    <TextView
+        android:id="@+id/donation_we22324"
+        android:layout_width="175dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="5dp"
+        android:text="Suggested Vehicle :"
+        android:textAppearance="@style/donation_card"
+        android:gravity="top"
+        android:layout_marginTop="270dp"
+        />
+
+    <TextView
+        android:id="@+id/vehicle_card_3"
+        android:layout_width="160dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="270dp"
+        android:text="TextView"
+        android:layout_marginLeft="190dp"
+        android:textAppearance="@style/both"
+        android:gravity="top"
+        />
+</androidx.cardview.widget.CardView>

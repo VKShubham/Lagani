@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.lagani20.Modules.ADDDonations;
+import com.example.lagani20.Modules.Status_Donations;
 import com.example.lagani20.R;
 import com.example.lagani20.RegisterLogin.MainActivity;
 import com.example.lagani20.RegisterLogin.UpdateProfile;
@@ -38,6 +39,7 @@ public class DonorDashboard extends AppCompatActivity {
     FirebaseUser user;
     FirebaseAuth auth;
     ImageView logo;
+    View statusbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,7 +54,7 @@ public class DonorDashboard extends AppCompatActivity {
         firebaseStorage = FirebaseStorage.getInstance();
         storageReference = firebaseStorage.getReference().child("images/" + user.getUid());
         logo = findViewById(R.id.logo);
-
+        statusbtn = findViewById(R.id.rectangle_4);
 
         Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
         logo.setImageBitmap(bitmap);
@@ -64,6 +66,14 @@ public class DonorDashboard extends AppCompatActivity {
                 Toast.makeText(DonorDashboard.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(DonorDashboard.this, MainActivity.class));
                 overridePendingTransition(R.anim.push_up_in, R.anim.push_down_out);
+            }
+        });
+
+        statusbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DonorDashboard.this, Status_Donations.class));
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
 

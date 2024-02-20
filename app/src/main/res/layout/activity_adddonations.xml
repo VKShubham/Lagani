@@ -453,7 +453,7 @@
                 android:layout_marginLeft="12dp"
                 android:layout_alignParentTop="true"
                 android:layout_marginTop="918dp"
-                android:text="Resturant Name"
+                android:text="Place Name"
                 android:textAppearance="@style/pin_code"
                 android:gravity="top"
                 />
@@ -480,7 +480,7 @@
                 android:textAppearance="@style/some_id"
                 android:textSize="22sp"
                 android:inputType="text"
-                android:hint="Enter Resturant Name"
+                android:hint="Enter Place Name"
                 style="@style/NoUnderlineEditText"
                 android:gravity="center_vertical"
                 />
