@@ -171,7 +171,7 @@
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/abhaya_libre_semibold"
         android:textSize="17sp"
-        android:id="@+id/accpet_btn_2222222"/>
+        android:id="@+id/deliverd_btn"/>
 
     <Button
         android:layout_width="150dp"

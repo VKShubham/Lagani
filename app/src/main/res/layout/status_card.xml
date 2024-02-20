@@ -28,7 +28,7 @@
         android:layout_marginTop="15dp"
         android:text="1234"
         android:textSize="22sp"
-        android:layout_marginStart="78dp"
+        android:layout_marginStart="80dp"
         android:textAppearance="@style/lotus_fly_r"
         />
 
@@ -45,7 +45,7 @@
 
     <TextView
         android:id="@+id/status_text"
-        android:layout_width="100dp"
+        android:layout_width="110dp"
         android:layout_height="29dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"

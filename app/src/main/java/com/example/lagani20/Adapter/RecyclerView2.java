@@ -1,16 +1,22 @@
 package com.example.lagani20.Adapter;
 
+import android.app.AlertDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lagani20.R;
 import com.example.lagani20.classes.Donations;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -57,10 +63,12 @@ public class RecyclerView2 extends RecyclerView.Adapter<com.example.lagani20.Ada
             public TextView mobile;
             public TextView resturantname;
             public TextView vehicletype;
+            public Button btn;
+            private FirebaseDatabase firebaseDatabase;
 
             public ViewHolder2(@NonNull View itemView) {
                 super(itemView);
-                //itemView.setOnClickListener(this);
+                itemView.setOnClickListener(this);
                 donationtype = itemView.findViewById(R.id.type_2);
                 donationweight = itemView.findViewById(R.id.weight_card_2);
                 pincode = itemView.findViewById(R.id.pincode_card_2);
@@ -68,11 +76,53 @@ public class RecyclerView2 extends RecyclerView.Adapter<com.example.lagani20.Ada
                 mobile = itemView.findViewById(R.id.contact_card_2);
                 resturantname = itemView.findViewById(R.id.res_name_2);
                 vehicletype = itemView.findViewById(R.id.vehicle_card_2);
+                btn = itemView.findViewById(R.id.deliverd_btn);
+                firebaseDatabase = FirebaseDatabase.getInstance();
+
+                btn.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int position = getAdapterPosition();
+                        if (position != RecyclerView.NO_POSITION) {
+                            AlertDialog.Builder builder = new AlertDialog.Builder(context);
+                            builder.setTitle("Confirm Action");
+                            builder.setMessage("Are you sure you Deliverd?");
+                            builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    Donations donations = list.get(position);
+                                    donations.setStatus("2");
+                                    firebaseDatabase.getReference()
+                                            .child("Donations")
+                                            .child(donations.getDonationid())
+                                            .setValue(donations)
+                                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                                @Override
+                                                public void onSuccess(Void unused) {
+                                                    list.remove(position);
+                                                    notifyItemRemoved(position);
+                                                    Toast.makeText(context, "Order Accepted", Toast.LENGTH_SHORT).show();
+                                                }
+                                            });
+                                }
+                            });
+                            builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialogInterface, int i) {
+                                    // Do nothing, dismiss the dialog
+                                }
+                            });
+                            builder.create().show();
+                        }
+                    }
+                });
             }
+
 
             @Override
             public void onClick(View view) {
-                // Handle item click if needed
+
             }
+
         }
 }

@@ -1,17 +1,24 @@
 package com.example.lagani20.Adapter;
 
+import android.app.AlertDialog;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.lagani20.R;
 import com.example.lagani20.classes.Donations;
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.List;
 
@@ -76,6 +83,8 @@ public class RecyclerViewForStatus extends RecyclerView.Adapter<RecyclerViewForS
         public TextView status;
         public ImageView statuscolor;
 
+        private  FirebaseDatabase firebaseDatabase;
+
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
 
@@ -88,14 +97,14 @@ public class RecyclerViewForStatus extends RecyclerView.Adapter<RecyclerViewForS
             orderno = itemView.findViewById(R.id.order_no);
             status = itemView.findViewById(R.id.status_text);
             statuscolor = itemView.findViewById(R.id.status_color);
-
+            firebaseDatabase = FirebaseDatabase.getInstance();
             // Set click listener if needed
             itemView.setOnClickListener(this);
         }
 
         @Override
         public void onClick(View view) {
-            // Handle click events if needed
+
         }
     }
 }
