@@ -18,6 +18,7 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 import com.example.lagani20.Modules.ADDDonations;
+import com.example.lagani20.Modules.CurrentLocation;
 import com.example.lagani20.Modules.Status_Donations;
 import com.example.lagani20.R;
 import com.example.lagani20.RegisterLogin.MainActivity;
@@ -40,6 +41,7 @@ public class DonorDashboard extends AppCompatActivity {
     FirebaseAuth auth;
     ImageView logo;
     View statusbtn;
+    View locationbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +57,7 @@ public class DonorDashboard extends AppCompatActivity {
         storageReference = firebaseStorage.getReference().child("images/" + user.getUid());
         logo = findViewById(R.id.logo);
         statusbtn = findViewById(R.id.rectangle_4);
+        locationbtn = findViewById(R.id.rectangle_8);
 
         Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
         logo.setImageBitmap(bitmap);
@@ -73,6 +76,14 @@ public class DonorDashboard extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(DonorDashboard.this, Status_Donations.class));
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            }
+        });
+
+        locationbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DonorDashboard.this, CurrentLocation.class));
                 overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });

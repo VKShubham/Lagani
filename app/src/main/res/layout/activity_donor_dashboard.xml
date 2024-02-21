@@ -238,11 +238,11 @@
         android:layout_width="359dp"
         android:layout_height="72dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="18dp"
         android:layout_alignParentTop="true"
-        android:layout_marginTop="479dp"
-        android:background="@drawable/rectangle_2"
-        />
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="18dp"
+        android:layout_marginTop="478dp"
+        android:background="@drawable/rectangle_2" />
 
     <ImageView
         android:id="@+id/illustration"

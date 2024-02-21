@@ -30,7 +30,7 @@ import java.util.ArrayList;
 public class Status_Donations extends AppCompatActivity {
 
     RecyclerView recyclerView;
-    ImageView personlogo;
+    ImageView logo;
     ImageView backbtn;
     ArrayList<Donations> list;
     RecyclerViewForStatus recyclerViewForStatus;
@@ -54,14 +54,10 @@ public class Status_Donations extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         db = FirebaseDatabase.getInstance();
         firebaseStorage = FirebaseStorage.getInstance();
-        personlogo = findViewById(R.id.logo);
-        databaseReference = firebaseStorage.getReference().child("images" + user.getUid());
+        logo = findViewById(R.id.logo);
 
-        databaseReference.getFile(new File(getCacheDir(), "temp.jpg")).addOnSuccessListener(taskSnapshot -> {
-            Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
-            personlogo.setImageBitmap(bitmap);
-            //   bar.setVisibility(View.INVISIBLE);
-        }).addOnFailureListener(e -> Log.e("Firebase", "Failed to download image: " + e.getMessage()));
+        Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
+        logo.setImageBitmap(bitmap);
 
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override

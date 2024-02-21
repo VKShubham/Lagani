@@ -3,6 +3,8 @@ package com.example.lagani20.Adapter;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,6 +66,7 @@ public class RecyclerView2 extends RecyclerView.Adapter<com.example.lagani20.Ada
             public TextView resturantname;
             public TextView vehicletype;
             public Button btn;
+            public Button btn1;
             private FirebaseDatabase firebaseDatabase;
 
             public ViewHolder2(@NonNull View itemView) {
@@ -77,6 +80,7 @@ public class RecyclerView2 extends RecyclerView.Adapter<com.example.lagani20.Ada
                 resturantname = itemView.findViewById(R.id.res_name_2);
                 vehicletype = itemView.findViewById(R.id.vehicle_card_2);
                 btn = itemView.findViewById(R.id.deliverd_btn);
+                btn1 = itemView.findViewById(R.id.direction_btn);
                 firebaseDatabase = FirebaseDatabase.getInstance();
 
                 btn.setOnClickListener(new View.OnClickListener() {
@@ -116,9 +120,28 @@ public class RecyclerView2 extends RecyclerView.Adapter<com.example.lagani20.Ada
                         }
                     }
                 });
+
+                btn1.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        int position = getAdapterPosition();
+                        Donations donations = list.get(position);
+                        Double longitude = donations.getLongitude();
+                        Double latitude = donations.getLatitude();
+                        Uri uri = Uri.parse("geo:" + latitude + "," + longitude + "?q=" + latitude + "," + longitude);
+                        Intent mapintent = new Intent(Intent.ACTION_VIEW, uri);
+                        mapintent.setPackage("com.google.android.apps.maps");
+                        if(mapintent.resolveActivity(context.getPackageManager()) != null){
+                            context.startActivity(mapintent);
+                        }
+                        else{
+                            Toast.makeText(context, "Google Map Is Not Installed", Toast.LENGTH_LONG).show();
+                        }
+                    }
+                });
+
+
             }
-
-
             @Override
             public void onClick(View view) {
 
