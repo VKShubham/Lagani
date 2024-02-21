@@ -51,9 +51,9 @@ public class RecyclerViewForStatus extends RecyclerView.Adapter<RecyclerViewForS
         holder.vehicletype.setText(donations.getSuggestedvehicle());
         holder.status.setText(status(donations));
         if(donations.getStatus().equals("1")){
-            holder.statuscolor.setImageResource(R.drawable.greenround);
-        }else{
             holder.statuscolor.setImageResource(R.drawable.red_round);
+        }else{
+            holder.statuscolor.setImageResource(R.drawable.greenround);
         }
         holder.orderno.setText(donations.getDonationnumber());
     }

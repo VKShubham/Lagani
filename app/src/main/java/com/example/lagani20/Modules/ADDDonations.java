@@ -138,7 +138,7 @@ public class ADDDonations extends AppCompatActivity {
     private void adddetailstodatabase(String donationtype, String donationweight, String suggestedvehicle, String pincode, String mobileno, String address, String userid, String resturant)
     {
             final String key = db.getReference().push().getKey();
-            final Donations donations = new Donations(generateUniqueNumber(),donationtype,donationweight,suggestedvehicle,pincode,mobileno,address,userid,resturant,"0",key);
+            final Donations donations = new Donations(generateUniqueNumber(),donationtype,donationweight,suggestedvehicle,pincode,mobileno,address,userid,resturant,"0",key,null);
 
             db.getReference("Donations")
                     .child(key)

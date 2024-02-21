@@ -14,6 +14,8 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.example.lagani20.R;
 import com.example.lagani20.classes.Donations;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
 
 import org.w3c.dom.Text;
@@ -67,6 +69,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public TextView resturantname;
         public TextView vehicletype;
         public Button accpetbtn;
+        private FirebaseAuth auth;
+        private FirebaseUser user;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
@@ -80,6 +84,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             mobile = itemView.findViewById(R.id.contact_card);
             resturantname = itemView.findViewById(R.id.res_name);
             vehicletype = itemView.findViewById(R.id.vehicle_card);
+            auth = FirebaseAuth.getInstance();
+            user = auth.getCurrentUser();
         }
 
         public void onClick(View view) {
@@ -87,6 +93,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             if (position != RecyclerView.NO_POSITION) {
                 Donations donations = list.get(position);
                 donations.setStatus("1");
+                donations.setUserid2(user.getUid());
                 firebaseDatabase.getReference()
                         .child("Donations")
                         .child(donations.getDonationid())

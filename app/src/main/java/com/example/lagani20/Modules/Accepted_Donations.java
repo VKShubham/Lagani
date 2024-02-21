@@ -61,7 +61,7 @@ public class Accepted_Donations extends AppCompatActivity {
                 accpetdlist = new ArrayList<>();
                 for(DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Donations donations = dataSnapshot.getValue(Donations.class);
-                    if("1".equals(donations.getStatus())){
+                    if("1".equals(donations.getStatus()) && userid.equals(donations.getUserid2())){
                         accpetdlist.add(donations);
                     }
                 }

@@ -78,7 +78,7 @@ public class Status_Donations extends AppCompatActivity {
 
                         for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
                             Donations donations = dataSnapshot.getValue(Donations.class);
-                            if("2".equals(donations.getStatus()) || "1".equals(donations.getStatus())){
+                            if("2".equals(donations.getStatus()) || "1".equals(donations.getStatus()) && user.getUid().equals(donations.getUserid())){
                                 list.add(donations);
                             }
                         }
