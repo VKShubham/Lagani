@@ -17,6 +17,7 @@ import com.example.lagani20.R;
 import com.example.lagani20.classes.Donations;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.FirebaseDatabase;
@@ -67,20 +68,35 @@ public class Status_Donations extends AppCompatActivity {
             }
         });
 
+        recyclerViewForStatus = new RecyclerViewForStatus(Status_Donations.this, list);
+        recyclerView.setAdapter(recyclerViewForStatus);
         db.getReference()
-                .child("Donations").addListenerForSingleValueEvent(new ValueEventListener() {
+                .child("Donations")
+                .addChildEventListener(new ChildEventListener() {
                     @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                            Donations donations = dataSnapshot.getValue(Donations.class);
-                            if("2".equals(donations.getStatus()) || "1".equals(donations.getStatus()) && user.getUid().equals(donations.getUserid())){
-                                list.add(donations);
-                            }
+                    public void onChildAdded(@NonNull DataSnapshot snapshot, String previousChildName) {
+                        Donations donations = snapshot.getValue(Donations.class);
+                        if (("2".equals(donations.getStatus()) || "1".equals(donations.getStatus())) && user.getUid().equals(donations.getUserid())) {
+                            list.add(donations);
+                            recyclerViewForStatus.notifyItemInserted(list.size() - 1); // Notify adapter of new item
                         }
-                        recyclerViewForStatus = new RecyclerViewForStatus(Status_Donations.this, list);
-                        recyclerView.setAdapter(recyclerViewForStatus);
-                        recyclerViewForStatus.notifyDataSetChanged();
+                    }
+
+                    @Override
+                    public void onChildChanged(@NonNull DataSnapshot snapshot, String previousChildName) {
+                        // Handle child changed event
+                        // You might need to update the item in your list and notify the adapter
+                    }
+
+                    @Override
+                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                        // Handle child removed event
+                        // You might need to remove the item from your list and notify the adapter
+                    }
+
+                    @Override
+                    public void onChildMoved(@NonNull DataSnapshot snapshot, String previousChildName) {
+                        // Handle child moved event
                     }
 
                     @Override

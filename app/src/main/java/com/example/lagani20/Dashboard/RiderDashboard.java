@@ -11,7 +11,6 @@ import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -19,26 +18,23 @@ import com.example.lagani20.Adapter.RecyclerViewAdapter;
 import com.example.lagani20.Modules.Accepted_Donations;
 import com.example.lagani20.R;
 import com.example.lagani20.RegisterLogin.MainActivity;
-import com.example.lagani20.RegisterLogin.UpdateProfile;
 import com.example.lagani20.classes.Donations;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.storage.FirebaseStorage;
 import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Date;
 
 public class RiderDashboard extends AppCompatActivity {
 
     View logout;
-    View updateprofile;
     RecyclerView recyclerView;
     RecyclerViewAdapter recyclerViewAdapter;
     ArrayList<Donations> list;
@@ -48,13 +44,13 @@ public class RiderDashboard extends AppCompatActivity {
     ImageView personlogo;
     FirebaseStorage firebaseStorage;
     StorageReference databaseReference;
-    ImageView accpeteddonation;
+    ImageView acceptedDonationButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rider_dashboard);
 
-        accpeteddonation = findViewById(R.id.rectangle_3);
         logout = findViewById(R.id.rectangle_6);
         recyclerView = findViewById(R.id.avildonations);
         db = FirebaseDatabase.getInstance();
@@ -70,48 +66,53 @@ public class RiderDashboard extends AppCompatActivity {
         databaseReference.getFile(new File(getCacheDir(), "temp.jpg")).addOnSuccessListener(taskSnapshot -> {
             Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
             personlogo.setImageBitmap(bitmap);
-         //   bar.setVisibility(View.INVISIBLE);
         }).addOnFailureListener(e -> Log.e("Firebase", "Failed to download image: " + e.getMessage()));
 
-        logout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FirebaseAuth.getInstance().signOut();
-                Toast.makeText(RiderDashboard.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(RiderDashboard.this, MainActivity.class));
-                overridePendingTransition(R.anim.push_up_in, R.anim.push_down_out);
-            }
+        logout.setOnClickListener(view -> {
+            FirebaseAuth.getInstance().signOut();
+            Toast.makeText(RiderDashboard.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(RiderDashboard.this, MainActivity.class));
+            overridePendingTransition(R.anim.push_up_in, R.anim.push_down_out);
         });
 
-        accpeteddonation.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                startActivity(new Intent(RiderDashboard.this, Accepted_Donations.class));
-                overridePendingTransition(R.anim.slide_in_left,R.anim.slide_out_right);
-            }
+        acceptedDonationButton = findViewById(R.id.rectangle_3);
+        acceptedDonationButton.setOnClickListener(view -> {
+            startActivity(new Intent(RiderDashboard.this, Accepted_Donations.class));
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
         });
 
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerViewAdapter = new RecyclerViewAdapter(RiderDashboard.this, list);
+        recyclerView.setAdapter(recyclerViewAdapter);
+        db.getReference().child("Donations").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, String previousChildName) {
+                Donations donation = snapshot.getValue(Donations.class);
+                if ("0".equals(donation.getStatus())) {
+                    list.add(donation);
+                    recyclerViewAdapter.notifyDataSetChanged();
+                }
+            }
 
-        db.getReference()
-                .child("Donations").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, String previousChildName) {
+                // Handle child changed event
+            }
 
-                        for (DataSnapshot dataSnapshot : snapshot.getChildren()) {
-                            Donations donations = dataSnapshot.getValue(Donations.class);
-                            if("0".equals(donations.getStatus())){
-                                list.add(donations);
-                            }
-                        }
-                        recyclerViewAdapter = new RecyclerViewAdapter(RiderDashboard.this, list);
-                        recyclerView.setAdapter(recyclerViewAdapter);
-                        recyclerViewAdapter.notifyDataSetChanged();
-                    }
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+                // Handle child removed event
+            }
 
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-                        // Handle onCancelled() method if needed
-                    }
-                });
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, String previousChildName) {
+                // Handle child moved event
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                // Handle onCancelled() method if needed
+            }
+        });
     }
 }

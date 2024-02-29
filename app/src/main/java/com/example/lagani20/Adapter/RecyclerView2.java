@@ -90,22 +90,22 @@ public class RecyclerView2 extends RecyclerView.Adapter<com.example.lagani20.Ada
                         if (position != RecyclerView.NO_POSITION) {
                             AlertDialog.Builder builder = new AlertDialog.Builder(context);
                             builder.setTitle("Confirm Action");
-                            builder.setMessage("Are you sure you Deliverd?");
+                            builder.setMessage("Are you sure you Delivered?");
                             builder.setPositiveButton("Yes", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-                                    Donations donations = list.get(position);
-                                    donations.setStatus("2");
+                                    Donations donation = list.get(position);
+                                    donation.setStatus("2");
                                     firebaseDatabase.getReference()
                                             .child("Donations")
-                                            .child(donations.getDonationid())
-                                            .setValue(donations)
+                                            .child(donation.getDonationid())
+                                            .setValue(donation)
                                             .addOnSuccessListener(new OnSuccessListener<Void>() {
                                                 @Override
                                                 public void onSuccess(Void unused) {
                                                     list.remove(position);
                                                     notifyItemRemoved(position);
-                                                    Toast.makeText(context, "Order Accepted", Toast.LENGTH_SHORT).show();
+                                                    Toast.makeText(context, "Order Delivered", Toast.LENGTH_SHORT).show();
                                                 }
                                             });
                                 }
@@ -113,13 +113,14 @@ public class RecyclerView2 extends RecyclerView.Adapter<com.example.lagani20.Ada
                             builder.setNegativeButton("No", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialogInterface, int i) {
-                                    // Do nothing, dismiss the dialog
+                                    dialogInterface.dismiss();
                                 }
                             });
-                            builder.create().show();
+                            builder.show();
                         }
                     }
                 });
+
 
                 btn1.setOnClickListener(new View.OnClickListener() {
                     @Override
