@@ -13,8 +13,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/status_view"
+        android:layout_marginEnd="5dp"
         android:layout_marginTop="120dp"
-        android:layout_marginStart="21.50dp"/>
+        android:layout_marginStart="12.50dp"/>
 
 
 </RelativeLayout>

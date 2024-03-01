@@ -41,6 +41,8 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import com.google.android.gms.maps.CameraUpdateFactory;
 
 import java.io.File;
+import java.sql.Time;
+import java.util.Calendar;
 
 public class ADDDonations extends AppCompatActivity implements OnMapReadyCallback {
 
@@ -139,9 +141,18 @@ public class ADDDonations extends AppCompatActivity implements OnMapReadyCallbac
         return String.format("%04d", lastFourDigits);
     }
 
+    public static String getdate(){
+        Calendar calendar = Calendar.getInstance();
+        int year = calendar.get(Calendar.YEAR);
+        int month = calendar.get(Calendar.MONTH) + 1;
+        int day = calendar.get(Calendar.DAY_OF_MONTH);
+        String dateString = String.format("%02d-%02d-%04d", day, month, year);
+        return dateString;
+    }
+
     private void adddetailstodatabase(String donationtype, String donationweight, String suggestedvehicle, String pincode, String mobileno, String address, String userid, String resturant, double longitiude, double latitude) {
         final String key = db.getReference().push().getKey();
-        final Donations donations = new Donations(generateUniqueNumber(),donationtype,donationweight,suggestedvehicle,pincode,mobileno,address,userid,resturant,"0",key,null,longitiude,latitude);
+        final Donations donations = new Donations(generateUniqueNumber(),donationtype,donationweight,suggestedvehicle,pincode,mobileno,address,userid,resturant,"0",key,null, getdate(),longitiude,latitude);
 
         db.getReference("Donations")
                 .child(key)

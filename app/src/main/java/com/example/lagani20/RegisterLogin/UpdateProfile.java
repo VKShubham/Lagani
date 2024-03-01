@@ -82,6 +82,8 @@ public class UpdateProfile extends AppCompatActivity {
             progressDialog.dismiss();
             ref.getFile(new File(getCacheDir(), "temp.jpg")).addOnSuccessListener(taskSnapshot1 -> {
                 Toast.makeText(this, "Image Uploaded Successfully", Toast.LENGTH_SHORT).show();
+                Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
+                profilephoto.setImageBitmap(bitmap);
             });
         }).addOnFailureListener(e -> {
             progressDialog.dismiss();
@@ -119,11 +121,8 @@ public class UpdateProfile extends AppCompatActivity {
         bar.setVisibility(View.VISIBLE);
         ref = storageReference.child("images/" + fuser.getUid());
 
-        ref.getFile(new File(getCacheDir(), "temp.jpg")).addOnSuccessListener(taskSnapshot -> {
-            Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
-            profilephoto.setImageBitmap(bitmap);
-            bar.setVisibility(View.INVISIBLE);
-        }).addOnFailureListener(e -> Log.e("Firebase", "Failed to download image: " + e.getMessage()));
+        Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
+        profilephoto.setImageBitmap(bitmap);
 
         db.getReference("Users").child(fuser.getUid()).addValueEventListener(new ValueEventListener() {
             @Override

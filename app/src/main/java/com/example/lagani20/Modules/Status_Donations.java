@@ -76,7 +76,7 @@ public class Status_Donations extends AppCompatActivity {
                     @Override
                     public void onChildAdded(@NonNull DataSnapshot snapshot, String previousChildName) {
                         Donations donations = snapshot.getValue(Donations.class);
-                        if (("2".equals(donations.getStatus()) || "1".equals(donations.getStatus())) && user.getUid().equals(donations.getUserid())) {
+                        if (("0".equals(donations.getStatus()) && user.getUid().equals(donations.getUserid())  || ("2".equals(donations.getStatus()) && user.getUid().equals(donations.getUserid()) || "1".equals(donations.getStatus())) && user.getUid().equals(donations.getUserid()))) {
                             list.add(donations);
                             recyclerViewForStatus.notifyItemInserted(list.size() - 1); // Notify adapter of new item
                         }

@@ -50,7 +50,7 @@ public class RecyclerViewForStatus extends RecyclerView.Adapter<RecyclerViewForS
         holder.pincode.setText(donations.getPincode());
         holder.vehicletype.setText(donations.getSuggestedvehicle());
         holder.status.setText(status(donations));
-        if(donations.getStatus().equals("1")){
+        if(donations.getStatus().equals("1") || donations.getStatus().equals("0")){
             holder.statuscolor.setImageResource(R.drawable.red_round);
         }else{
             holder.statuscolor.setImageResource(R.drawable.greenround);
@@ -63,7 +63,12 @@ public class RecyclerViewForStatus extends RecyclerView.Adapter<RecyclerViewForS
         if(n.equals("1")){
             return "Active";
         }
-        return "Completed";
+        else if(n.equals("2")) {
+            return "Completed";
+        }
+        else{
+            return "Not Accepted";
+        }
     }
 
     @Override

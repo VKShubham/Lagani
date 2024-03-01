@@ -19,6 +19,7 @@ import android.widget.Toast;
 
 import com.example.lagani20.Modules.ADDDonations;
 import com.example.lagani20.Modules.CurrentLocation;
+import com.example.lagani20.Modules.History;
 import com.example.lagani20.Modules.Status_Donations;
 import com.example.lagani20.R;
 import com.example.lagani20.RegisterLogin.MainActivity;
@@ -42,6 +43,7 @@ public class DonorDashboard extends AppCompatActivity {
     ImageView logo;
     View statusbtn;
     View locationbtn;
+    View historybtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,6 +60,7 @@ public class DonorDashboard extends AppCompatActivity {
         logo = findViewById(R.id.logo);
         statusbtn = findViewById(R.id.rectangle_4);
         locationbtn = findViewById(R.id.rectangle_8);
+        historybtn = findViewById(R.id.rectangle_5);
 
         Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
         logo.setImageBitmap(bitmap);
@@ -69,6 +72,14 @@ public class DonorDashboard extends AppCompatActivity {
                 Toast.makeText(DonorDashboard.this, "Logged Out Successfully", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(DonorDashboard.this, MainActivity.class));
                 overridePendingTransition(R.anim.push_up_in, R.anim.push_down_out);
+            }
+        });
+
+        historybtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(DonorDashboard.this, History.class));
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
             }
         });
 

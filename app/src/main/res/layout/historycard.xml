@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="95dp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="16dp"
+    android:padding="5dp"
+    android:id="@+id/historycard">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="2.5dp"
+        android:layout_marginRight="2.5dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Order No : "
+            android:textSize="20sp"
+            android:fontFamily="@font/abhaya_libre_extrabold"
+            android:paddingTop="2dp"
+            android:id="@+id/ordertext"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/history_order"
+            android:layout_marginTop="3dp"
+            android:fontFamily="@font/abhaya_libre_semibold"
+            android:textSize="20sp"
+            android:text="#1234"
+            android:layout_toRightOf="@+id/ordertext"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Place Name : "
+            android:textSize="20sp"
+            android:fontFamily="@font/abhaya_libre_extrabold"
+            android:layout_below="@id/ordertext"
+            android:layout_marginTop="5dp"
+            android:id="@+id/placename"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="PLACE NAME"
+            android:layout_below="@id/ordertext"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/abhaya_libre_semibold"
+            android:textSize="20sp"
+            android:id="@+id/history_placename"
+            android:layout_toEndOf="@id/placename"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Date : "
+            android:paddingTop="2dp"
+            android:id="@+id/dateview"
+            android:fontFamily="@font/abhaya_libre_extrabold"
+            android:textSize="20sp"
+            android:layout_below="@+id/placename"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="DATE"
+            android:layout_below="@id/placename"
+            android:layout_marginTop="2dp"
+            android:fontFamily="@font/abhaya_libre_semibold"
+            android:textSize="20sp"
+            android:id="@+id/history_date"
+            android:layout_toRightOf="@id/dateview"/>
+
+        <ImageView
+            android:id="@+id/call_btn"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="140dp"
+            android:layout_toEndOf="@id/placename"
+            android:src="@drawable/telephone"
+            tools:ignore="SpeakableTextPresentCheck" />
+
+        <ImageView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="25dp"
+            android:id="@+id/direction_btn"
+            android:layout_toRightOf="@id/call_btn"
+            android:src="@drawable/direction"
+            tools:ignore="SpeakableTextPresentCheck" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>
