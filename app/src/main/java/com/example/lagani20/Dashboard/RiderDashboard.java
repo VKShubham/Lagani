@@ -2,14 +2,16 @@ package com.example.lagani20.Dashboard;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.Toast;
@@ -18,7 +20,10 @@ import com.example.lagani20.Adapter.RecyclerViewAdapter;
 import com.example.lagani20.Modules.Accepted_Donations;
 import com.example.lagani20.R;
 import com.example.lagani20.RegisterLogin.MainActivity;
+import com.example.lagani20.RegisterLogin.UpdateProfile;
 import com.example.lagani20.classes.Donations;
+import com.google.android.gms.location.FusedLocationProviderClient;
+import com.google.android.gms.location.LocationServices;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.ChildEventListener;
@@ -33,7 +38,8 @@ import java.io.File;
 import java.util.ArrayList;
 
 public class RiderDashboard extends AppCompatActivity {
-
+    private static final int EARTH_RADIUS = 6371;
+    private static final int LOCATION_PERMISSION_REQUEST_CODE = 1001;
     View logout;
     RecyclerView recyclerView;
     RecyclerViewAdapter recyclerViewAdapter;
@@ -45,6 +51,8 @@ public class RiderDashboard extends AppCompatActivity {
     FirebaseStorage firebaseStorage;
     StorageReference databaseReference;
     ImageView acceptedDonationButton;
+    double currentLatitude;
+    double currentLongitude;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -63,10 +71,13 @@ public class RiderDashboard extends AppCompatActivity {
         firebaseStorage = FirebaseStorage.getInstance();
         databaseReference = firebaseStorage.getReference().child("images" + user.getUid());
 
-        databaseReference.getFile(new File(getCacheDir(), "temp.jpg")).addOnSuccessListener(taskSnapshot -> {
-            Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
-            personlogo.setImageBitmap(bitmap);
-        }).addOnFailureListener(e -> Log.e("Firebase", "Failed to download image: " + e.getMessage()));
+        Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
+        personlogo.setImageBitmap(bitmap);
+
+        personlogo.setOnClickListener(view -> {
+            startActivity(new Intent(RiderDashboard.this, UpdateProfile.class));
+            overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        });
 
         logout.setOnClickListener(view -> {
             FirebaseAuth.getInstance().signOut();
@@ -88,7 +99,7 @@ public class RiderDashboard extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, String previousChildName) {
                 Donations donation = snapshot.getValue(Donations.class);
-                if ("0".equals(donation.getStatus())) {
+                if ("0".equals(donation.getStatus()) && isWithinRadius(currentLatitude, currentLongitude, donation.getLatitude(), donation.getLongitude(), 10)) {
                     list.add(donation);
                     recyclerViewAdapter.notifyDataSetChanged();
                 }
@@ -114,5 +125,57 @@ public class RiderDashboard extends AppCompatActivity {
                 // Handle onCancelled() method if needed
             }
         });
+
+        requestLocationPermissions();
+    }
+
+    private void requestLocationPermissions() {
+        ActivityCompat.requestPermissions(this,
+                new String[]{Manifest.permission.ACCESS_FINE_LOCATION},
+                LOCATION_PERMISSION_REQUEST_CODE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == LOCATION_PERMISSION_REQUEST_CODE) {
+            if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                requestLocationUpdates();
+            } else {
+                Toast.makeText(this, "Location permission denied", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    private void requestLocationUpdates() {
+        FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
+            return;
+        }
+        fusedLocationClient.getLastLocation()
+                .addOnSuccessListener(this, location -> {
+                    if (location != null) {
+                        currentLatitude = location.getLatitude();
+                        currentLongitude = location.getLongitude();
+                    }
+                })
+                .addOnFailureListener(this, e -> {
+                    Toast.makeText(this, "Location can't get it", Toast.LENGTH_LONG).show();
+                });
+    }
+
+    public boolean isWithinRadius(double currentLat, double currentLon, double targetLat, double targetLon, double radius) {
+        double distance = calculateDistance(currentLat, currentLon, targetLat, targetLon);
+        return distance <= radius;
+    }
+
+    public double calculateDistance(double lat1, double lon1, double lat2, double lon2) {
+        double dLat = Math.toRadians(lat2 - lat1);
+        double dLon = Math.toRadians(lon2 - lon1);
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+                Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) *
+                        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        return EARTH_RADIUS * c;
     }
 }
