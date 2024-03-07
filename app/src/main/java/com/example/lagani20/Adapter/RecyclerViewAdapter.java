@@ -1,10 +1,16 @@
 package com.example.lagani20.Adapter;
 
+import android.app.Dialog;
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.Window;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -17,10 +23,13 @@ import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
 
 import org.w3c.dom.Text;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.ViewHolder> {
@@ -68,8 +77,11 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
         public TextView mobile;
         public TextView resturantname;
         public TextView vehicletype;
+        public Button viewphoto;
         public Button accpetbtn;
         private FirebaseAuth auth;
+        private FirebaseStorage firebaseStorage;
+        private StorageReference storageReference;
         private FirebaseUser user;
 
         public ViewHolder(@NonNull View itemView) {
@@ -83,9 +95,45 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
             address = itemView.findViewById(R.id.address_card);
             mobile = itemView.findViewById(R.id.contact_card);
             resturantname = itemView.findViewById(R.id.res_name);
+            viewphoto = itemView.findViewById(R.id.viewphoto);
             vehicletype = itemView.findViewById(R.id.vehicle_card);
             auth = FirebaseAuth.getInstance();
             user = auth.getCurrentUser();
+
+            viewphoto.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Dialog dialog = new Dialog(context);
+                    dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+                    dialog.setContentView(R.layout.viewphoto);
+                    storageReference = FirebaseStorage.getInstance().getReference();
+                    int position = getAdapterPosition();
+                    Donations donations = list.get(position);
+                    String key = donations.getDonationid();
+                    StorageReference reference = storageReference.child("donation/" + key + ".jpg");
+                    ImageView image = dialog.findViewById(R.id.view_img);
+                    reference.getFile(new File(context.getCacheDir(),"Donation.jpg")).addOnCompleteListener(task -> {
+                        Bitmap bitmap = BitmapFactory.decodeFile(new File(context.getCacheDir(), "Donation.jpg").getAbsolutePath());
+                        if (image != null && bitmap != null) {
+                            image.setImageBitmap(bitmap);
+                        } else {
+                            Log.e("ProfileDialog", "ImageView or Bitmap is null");
+                        }
+                    });
+                    Bitmap bitmap = BitmapFactory.decodeFile(new File(context.getCacheDir(), "Donation.jpg").getAbsolutePath());
+
+                    if (image != null && bitmap != null) {
+                        image.setImageBitmap(bitmap);
+                    } else {
+                        Log.e("ProfileDialog", "ImageView or Bitmap is null");
+                    }
+                    Window window = dialog.getWindow();
+                    if (window != null) {
+                        window.setBackgroundDrawableResource(android.R.color.transparent);
+                        dialog.show();
+                    }
+                }
+            });
         }
 
         public void onClick(View view) {
