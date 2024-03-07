@@ -99,6 +99,7 @@ public class RiderDashboard extends AppCompatActivity {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, String previousChildName) {
                 Donations donation = snapshot.getValue(Donations.class);
+
                 if ("0".equals(donation.getStatus()) && isWithinRadius(currentLatitude, currentLongitude, donation.getLatitude(), donation.getLongitude(), 10)) {
                     list.add(donation);
                     recyclerViewAdapter.notifyDataSetChanged();
@@ -143,20 +144,21 @@ public class RiderDashboard extends AppCompatActivity {
                 requestLocationUpdates();
             } else {
                 Toast.makeText(this, "Location permission denied", Toast.LENGTH_SHORT).show();
-            }
+           }
         }
     }
-
     private void requestLocationUpdates() {
         FusedLocationProviderClient fusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED) {
-            return;
+           return;
         }
         fusedLocationClient.getLastLocation()
                 .addOnSuccessListener(this, location -> {
                     if (location != null) {
                         currentLatitude = location.getLatitude();
                         currentLongitude = location.getLongitude();
+                    }else{
+                        Toast.makeText(this, "Location can't get it Try Again", Toast.LENGTH_SHORT).show();
                     }
                 })
                 .addOnFailureListener(this, e -> {
@@ -175,7 +177,7 @@ public class RiderDashboard extends AppCompatActivity {
         double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
                 Math.cos(Math.toRadians(lat1)) * Math.cos(Math.toRadians(lat2)) *
                         Math.sin(dLon / 2) * Math.sin(dLon / 2);
-        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-        return EARTH_RADIUS * c;
+            double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+      return EARTH_RADIUS * c;
     }
 }

@@ -513,6 +513,7 @@
                 android:gravity="top"
                 />
 
+
             <View
                 android:id="@+id/submit_btn"
                 android:layout_width="237dp"
@@ -520,7 +521,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="78dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="1400dp"
+                android:layout_marginTop="1750dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/submit_rectangle"
                 />
@@ -532,7 +533,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_marginLeft="149.50dp"
                 android:layout_alignParentTop="true"
-                android:layout_marginTop="1407dp"
+                android:layout_marginTop="1757dp"
                 android:text="Submit"
                 android:textColor="#FFFFFF"
                 android:textSize="32sp"
@@ -540,6 +541,44 @@
                 android:fontFamily="@font/abhaya_libre"
                 android:gravity="top"
                 />
+
+            <TextView
+                android:id="@+id/img"
+                android:layout_width="226dp"
+                android:layout_height="25dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginLeft="12dp"
+                android:layout_alignParentTop="true"
+                android:layout_marginTop="1385dp"
+                android:text="Upload Food Image"
+                android:textAppearance="@style/pin_code"
+                android:gravity="top"
+                />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="1425dp"
+                app:cardCornerRadius="16dp"
+                android:layout_marginStart="7dp">
+
+                <RelativeLayout
+                    android:layout_width="380dp"
+                    android:layout_height="300dp">
+
+                    <ImageView
+                        android:id="@+id/food_img"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_centerInParent="true"
+                        android:src="@drawable/cammera" />
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/food_img_2"/>
+                </RelativeLayout>
+            </androidx.cardview.widget.CardView>
 
         </RelativeLayout>
 

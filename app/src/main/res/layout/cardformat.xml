@@ -163,11 +163,22 @@
         />
 
     <Button
-        android:layout_width="235dp"
+        android:layout_width="150dp"
         android:layout_height="40dp"
-        android:layout_marginLeft="60dp"
+        android:layout_marginStart="15dp"
         android:layout_marginTop="320dp"
-        android:text="Accept Donation"
+        android:text="View Image"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/abhaya_libre_semibold"
+        android:textSize="17sp"
+        android:id="@+id/viewphoto"/>
+
+    <Button
+        android:layout_width="150dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="183dp"
+        android:layout_marginTop="320dp"
+        android:text="Order Accept"
         android:layout_marginBottom="10dp"
         android:fontFamily="@font/abhaya_libre_semibold"
         android:textSize="17sp"
