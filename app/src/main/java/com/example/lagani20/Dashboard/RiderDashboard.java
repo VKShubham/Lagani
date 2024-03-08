@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 import com.example.lagani20.Adapter.RecyclerViewAdapter;
 import com.example.lagani20.Modules.Accepted_Donations;
+import com.example.lagani20.Modules.History2;
 import com.example.lagani20.R;
 import com.example.lagani20.RegisterLogin.MainActivity;
 import com.example.lagani20.RegisterLogin.UpdateProfile;
@@ -51,6 +52,7 @@ public class RiderDashboard extends AppCompatActivity {
     FirebaseStorage firebaseStorage;
     StorageReference storageReference;
     View acceptedDonationButton;
+    View completedbtn;
     double currentLatitude;
     double currentLongitude;
 
@@ -60,6 +62,7 @@ public class RiderDashboard extends AppCompatActivity {
         setContentView(R.layout.activity_rider_dashboard);
 
         logout = findViewById(R.id.rectangle_6);
+        completedbtn = findViewById(R.id.rectangle_4);
         recyclerView = findViewById(R.id.avildonations);
         db = FirebaseDatabase.getInstance();
         auth = FirebaseAuth.getInstance();
@@ -81,6 +84,14 @@ public class RiderDashboard extends AppCompatActivity {
         personlogo.setOnClickListener(view -> {
             startActivity(new Intent(RiderDashboard.this, UpdateProfile.class));
             overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+        });
+
+        completedbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(RiderDashboard.this, History2.class));
+                overridePendingTransition(R.anim.slide_in_left, R.anim.slide_out_right);
+            }
         });
 
         logout.setOnClickListener(view -> {
