@@ -84,8 +84,8 @@ public class RecyclerViewForHistory extends RecyclerView.Adapter<RecyclerViewFor
                 public void onClick(View view) {
                     int position = getAdapterPosition();
                     Donations donations = list.get(position);
-                    Double longitude = donations.getLongitude();
-                    Double latitude = donations.getLatitude();
+                    Double longitude = donations.getLongitude2();
+                    Double latitude = donations.getLatitude2();
                     Uri uri = Uri.parse("geo:" + latitude + "," + longitude + "?q=" + latitude + "," + longitude);
                     Intent mapintent = new Intent(Intent.ACTION_VIEW, uri);
                     mapintent.setPackage("com.google.android.apps.maps");

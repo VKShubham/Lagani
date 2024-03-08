@@ -19,6 +19,8 @@ public class Donations implements Serializable {
     private String donationnumber;
     private double longitude;
     private double latitude;
+    private double longitude2;
+    private double latitude2;
     public Donations() {}
 
     public Donations(String donationnumber,String donationtype, String donationweight, String suggestedvehicle, String pincode, String address, String mobileno, String userid, String resturant, String status , String donationid, String userid2, String date, Double longitude, Double latitude) {
@@ -157,5 +159,21 @@ public class Donations implements Serializable {
 
     public void setDate(String date) {
         this.date = date;
+    }
+
+    public double getLongitude2() {
+        return longitude2;
+    }
+
+    public void setLongitude2(double longitude2) {
+        this.longitude2 = longitude2;
+    }
+
+    public double getLatitude2() {
+        return latitude2;
+    }
+
+    public void setLatitude2(double latitude2) {
+        this.latitude2 = latitude2;
     }
 }
