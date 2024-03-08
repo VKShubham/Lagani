@@ -34,7 +34,7 @@ import java.io.File;
 public class DonorDashboard extends AppCompatActivity {
 
     View logout;
-    ImageButton donationbtn;
+    View donationbtn;
     View updateprofile;
     StorageReference storageReference;
     FirebaseStorage firebaseStorage;
@@ -62,8 +62,13 @@ public class DonorDashboard extends AppCompatActivity {
         locationbtn = findViewById(R.id.rectangle_8);
         historybtn = findViewById(R.id.rectangle_5);
 
-        Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
-        logo.setImageBitmap(bitmap);
+        storageReference.getFile(new File(getCacheDir(), "temp.jpg")).addOnSuccessListener(taskSnapshot -> {
+            Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
+            logo.setImageBitmap(bitmap);
+        }).addOnFailureListener(e -> {
+            Toast.makeText(this, "Photo Is Not Uploaded", Toast.LENGTH_SHORT).show();
+        });
+
 
         logout.setOnClickListener(new View.OnClickListener() {
             @Override

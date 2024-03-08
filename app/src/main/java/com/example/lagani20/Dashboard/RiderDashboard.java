@@ -49,8 +49,8 @@ public class RiderDashboard extends AppCompatActivity {
     FirebaseDatabase db;
     ImageView personlogo;
     FirebaseStorage firebaseStorage;
-    StorageReference databaseReference;
-    ImageView acceptedDonationButton;
+    StorageReference storageReference;
+    View acceptedDonationButton;
     double currentLatitude;
     double currentLongitude;
 
@@ -69,10 +69,14 @@ public class RiderDashboard extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         personlogo = findViewById(R.id.logo);
         firebaseStorage = FirebaseStorage.getInstance();
-        databaseReference = firebaseStorage.getReference().child("images" + user.getUid());
+        storageReference = firebaseStorage.getReference().child("images/" + user.getUid());
 
-        Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
-        personlogo.setImageBitmap(bitmap);
+        storageReference.getFile(new File(getCacheDir(), "temp.jpg")).addOnSuccessListener(taskSnapshot -> {
+            Bitmap bitmap = BitmapFactory.decodeFile(new File(getCacheDir(), "temp.jpg").getAbsolutePath());
+            personlogo.setImageBitmap(bitmap);
+        }).addOnFailureListener(e -> {
+            Toast.makeText(this, "Photo Is Not Uploaded", Toast.LENGTH_SHORT).show();
+        });
 
         personlogo.setOnClickListener(view -> {
             startActivity(new Intent(RiderDashboard.this, UpdateProfile.class));

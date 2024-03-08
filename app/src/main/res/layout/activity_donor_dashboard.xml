@@ -13,7 +13,7 @@
     <include layout="@layout/toolbar"/>
 
 
-    <ImageButton
+    <View
         android:id="@+id/rectangle_3"
         android:layout_width="72dp"
         android:layout_height="72dp"
@@ -21,6 +21,17 @@
         android:layout_marginLeft="20dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="122dp"
+        android:background="@drawable/rectangle_4"
+        android:src="@drawable/donationicon"
+        />
+    <ImageView
+        android:id="@+id/rectangle_32"
+        android:layout_width="56.94dp"
+        android:layout_height="49dp"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="25dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="134dp"
         android:background="@drawable/rectangle_4"
         android:src="@drawable/donationicon"
         />
