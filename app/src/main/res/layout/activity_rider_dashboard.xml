@@ -146,6 +146,7 @@
         android:text="No Orders"
         android:fontFamily="@font/abhaya_libre_extrabold"
         android:textSize="42sp"
+        android:id="@+id/noorders"
         android:layout_marginStart="105dp"
         android:layout_marginTop="420dp"/>
 
