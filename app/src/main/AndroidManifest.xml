@@ -73,7 +73,7 @@
             android:exported="false" />
         <activity
             android:name=".RegisterLogin.MainActivity"
-            android:exported="false">
+            android:exported="true">
         </activity>
 
         <meta-data

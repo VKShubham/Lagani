@@ -11,67 +11,79 @@
 
     <TextView
         android:id="@+id/logintitle"
-        android:layout_width="284dp"
+        android:layout_width="wrap_content"
         android:layout_height="50dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="65dp"
+        android:layout_centerHorizontal="true"
         android:layout_marginTop="59dp"
         android:gravity="center_horizontal|top"
         android:text="Login"
         android:textAppearance="@style/login" />
 
-    <TextView
-        android:id="@+id/login"
-        android:layout_width="58dp"
-        android:layout_height="29dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="131dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="164dp"
-        android:text="@string/login"
-        android:textSize="22sp"
-        android:textColor="#036BB9"
-        android:fontFamily="@font/abhaya_libre"
-        android:gravity="top"
-        />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="164dp">
 
-    <TextView
-        android:id="@+id/register"
-        android:layout_width="84dp"
-        android:layout_height="29dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="203dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="164dp"
-        android:textSize="22sp"
-        android:textColor="#A6A6A6"
-        android:text="@string/register"
-        android:fontFamily="@font/abhaya_libre"
-        android:gravity="center_vertical|start"
-        />
+        <TextView
+            android:id="@+id/login"
+            android:layout_width="58dp"
+            android:layout_height="29dp"
+            android:layout_alignParentTop="true"
+            android:fontFamily="@font/abhaya_libre"
+            android:gravity="top"
+            android:text="@string/login"
+            android:textColor="#036BB9"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.405"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/register"
+            android:layout_width="84dp"
+            android:layout_height="29dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:fontFamily="@font/abhaya_libre"
+            android:gravity="center_vertical|start"
+            android:text="@string/register"
+            android:textColor="#A6A6A6"
+            android:textSize="22sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.645"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <ImageView
+            android:id="@+id/line_3"
+            android:layout_width="57dp"
+            android:layout_height="1dp"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentTop="true"
+            android:background="@drawable/line_3"
+            android:visibility="visible"
+            app:layout_constraintBottom_toBottomOf="@+id/login"
+            app:layout_constraintEnd_toEndOf="@+id/login"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/login"
+            app:layout_constraintTop_toTopOf="@+id/login"
+            app:layout_constraintVertical_bias="1.0" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
     <!-- Email Componet -->
-    <ImageView
-        android:id="@+id/line_3"
-        android:layout_width="57dp"
-        android:layout_height="1dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="131dp"
-        android:layout_marginTop="198dp"
-        android:background="@drawable/line_3"
-        android:visibility="visible" />
-
     <RelativeLayout
         android:id="@+id/component_1"
         android:layout_width="357dp"
         android:layout_height="71dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="25dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="272dp"
-        android:clipToOutline="true">
+        android:layout_centerHorizontal="true">
 
         <RelativeLayout
             android:id="@+id/property_1_"
@@ -117,12 +129,8 @@
         android:id="@+id/component_2"
         android:layout_width="357dp"
         android:layout_height="71dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginLeft="25dp"
         android:layout_marginTop="371dp"
-        android:clipToOutline="true">
+        android:layout_centerHorizontal="true">
 
         <RelativeLayout
             android:id="@+id/property_2_"
@@ -138,13 +146,13 @@
                 style="@style/NoUnderlineEditText"
                 android:layout_width="250dp"
                 android:layout_height="35dp"
-                android:inputType="textPassword"
                 android:layout_alignParentBottom="true"
                 android:layout_marginLeft="-2dp"
                 android:layout_marginBottom="0dp"
                 android:layout_toRightOf="@id/lockimage"
                 android:fontFamily="@font/abhaya_libre"
                 android:hint="@string/password"
+                android:inputType="textPassword"
                 android:textColorHint="#A6A6A6"
                 tools:ignore="TouchTargetSizeCheck" />
 
@@ -175,65 +183,51 @@
     </RelativeLayout>
 
     <!-- Check -->
+<RelativeLayout
+    android:layout_width="357dp"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="466dp"
+    android:layout_centerHorizontal="true">
 
-    <ImageView
+    <View
         android:id="@+id/checkbox"
-        android:layout_width="33dp"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginStart="39dp"
-        android:layout_marginTop="466dp"
-        android:layout_marginEnd="339dp"
-        android:src="@drawable/rectangle_6" />
+        android:layout_width="21dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="5dp"
+        android:background="@drawable/rectangle_6" />
 
     <ImageView
         android:id="@+id/group_1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/checkbox"
-        android:layout_alignBottom="@+id/checkbox"
+        android:layout_width="16dp"
+        android:layout_height="14dp"
         android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="44dp"
-        android:layout_marginTop="469dp"
-        android:layout_marginEnd="4dp"
-        android:layout_marginBottom="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="4dp"
         android:src="@drawable/check"
         android:visibility="visible" />
 
     <TextView
         android:id="@+id/remember_me"
-        android:layout_width="176dp"
-        android:layout_height="25dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="59dp"
-        android:layout_marginTop="462dp"
-        android:gravity="top"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="@string/remember_me"
         android:fontFamily="@font/abhaya_libre"
         android:textColor="#6B5E5E"
+        android:layout_marginStart="30dp"
         android:textSize="21sp" />
-
     <TextView
         android:id="@+id/forget_pass"
-        android:layout_width="170dp"
+        android:layout_width="wrap_content"
         android:layout_height="27dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
-        android:layout_marginStart="220dp"
-        android:layout_marginLeft="220dp"
-        android:layout_marginTop="463dp"
-        android:layout_marginEnd="13dp"
-        android:gravity="top"
         android:text="@string/forget_password"
         android:fontFamily="@font/abhaya_libre"
         android:textColor="#0386D0"
         android:textSize="21sp" />
+
+</RelativeLayout>
+
 
     <RelativeLayout
         android:id="@+id/frame_16"
@@ -262,19 +256,23 @@
 
     <ImageView
         android:id="@+id/image_11"
-        android:layout_width="wrap_content"
-        android:layout_height="304dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentEnd="true"
+        android:layout_width="205dp"
+        android:layout_height="400dp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginLeft="0dp"
-        android:layout_marginTop="555dp"
-        android:layout_marginEnd="-2dp"
-        android:layout_marginBottom="-10dp"
-        android:src="@drawable/loginlower" />
+        android:layout_marginTop="620dp"
+        android:layout_marginBottom="94dp"
+        android:src="@drawable/image_11" />
+
+    <View
+        android:layout_width="wrap_content"
+        android:layout_height="250dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="-2dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginBottom="0dp"
+        android:background="@drawable/centerbaned"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </RelativeLayout>

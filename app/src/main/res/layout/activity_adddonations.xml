@@ -20,565 +20,731 @@
             android:layout_height="match_parent"
             android:clipToOutline="true">
 
-            <View
-                android:id="@+id/rectangle_2"
-                android:layout_width="370dp"
-                android:layout_height="155dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="15dp"
-                android:background="@drawable/rectangle_2_for_donationsac" />
-
-            <TextView
-                android:id="@+id/donation_ty"
-                android:layout_width="160dp"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="8dp"
-                android:layout_marginTop="21dp"
-                android:fontFamily="@font/abhaya_libre_extrabold"
-                android:gravity="center_horizontal|top"
-                android:text="Donation Type"
-                android:textAppearance="@style/donation_ty" />
-
-            <RadioGroup
-                android:layout_width="65dp"
-                android:layout_height="100dp"
-                android:layout_marginTop="60dp"
-                android:id="@+id/donation_type">
-
-                <RadioButton
-                    android:id="@+id/ellipse_11"
-                    android:layout_width="30dp"
-                    android:layout_height="21.47dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="33dp" />
-
-                <RadioButton
-                    android:id="@+id/ellipse_12"
-                    android:layout_width="30dp"
-                    android:layout_height="21.47dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="33dp"
-                    android:layout_marginTop="12dp" />
-
-                <RadioButton
-                    android:id="@+id/ellipse_14"
-                    android:layout_width="30dp"
-                    android:layout_height="21.47dp"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentTop="true"
-                    android:layout_marginLeft="33dp"
-                    android:layout_marginTop="12dp" />
-
-            </RadioGroup>
-
-            <TextView
-                android:id="@+id/only_people"
-                android:layout_width="306dp"
-                android:layout_height="24dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="73dp"
-                android:layout_marginTop="58dp"
-                android:gravity="top"
-                android:text="Only People"
-                android:textAppearance="@style/only_people" />
-
-            <TextView
-                android:id="@+id/only_animal"
-                android:layout_width="306dp"
-                android:layout_height="24dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="73dp"
-                android:layout_marginTop="91dp"
-                android:gravity="top"
-                android:text="Only Animal"
-                android:textAppearance="@style/only_people" />
-
-            <TextView
-                android:id="@+id/both"
-                android:layout_width="306dp"
-                android:layout_height="24dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="73dp"
-                android:layout_marginTop="124dp"
-                android:gravity="top"
-                android:text="Both"
-                android:textAppearance="@style/only_people" />
-
-            <View
-                android:id="@+id/rectangle_3"
-                android:layout_width="370dp"
-                android:layout_height="129dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="200dp"
-                android:background="@drawable/rectangle_2_for_donationsac" />
-
-            <TextView
-                android:id="@+id/donation_wa"
-                android:layout_width="226dp"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="205dp"
-                android:layout_marginLeft="-15dp"
-                android:gravity="center_horizontal|top"
-                android:text="Donation Weight"
-                android:textAppearance="@style/donation_ty" />
-
-            <RadioGroup
-                android:id="@+id/weight"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="33dp"
-                android:layout_marginTop="245dp"
-                android:orientation="vertical">
+                android:layout_marginTop="15dp">
 
-                <!-- First pair of radio buttons aligned vertically -->
-                <RadioButton
-                    android:id="@+id/ellipse_15"
-                    android:layout_width="30dp"
-                    android:layout_height="22dp" />
+                <View
+                    android:id="@+id/rectangle_2"
+                    android:layout_width="370dp"
+                    android:layout_height="155dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/rectangle_2_for_donationsac"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent" />
 
-                <RadioButton
-                    android:id="@+id/ellipse_16"
-                    android:layout_width="30dp"
-                    android:layout_height="22dp"
-                    android:layout_marginLeft="181dp"
-                    android:layout_marginTop="-21.50dp"/>
+                <TextView
+                    android:id="@+id/donation_ty"
+                    android:layout_width="160dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:layout_marginBottom="120dp"
+                    android:fontFamily="@font/abhaya_libre_extrabold"
+                    android:gravity="center_horizontal|top"
+                    android:text="Donation Type"
+                    android:textAppearance="@style/donation_ty"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
+                    app:layout_constraintHorizontal_bias="0.047"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_2" />
 
-                <!-- Second pair of radio buttons aligned horizontally -->
-                <RadioButton
-                    android:id="@+id/ellipse_17"
-                    android:layout_width="30dp"
-                    android:layout_height="22dp"
-                    android:layout_marginTop="12dp" />
+                <RadioGroup
+                    android:id="@+id/donation_type"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
+                    app:layout_constraintHorizontal_bias="0.055"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_2">
 
-                <RadioButton
-                    android:id="@+id/ellipse_18"
-                    android:layout_width="30dp"
-                    android:layout_height="22dp"
-                    android:layout_marginTop="-21.50dp"
-                    android:layout_marginLeft="181dp"/>
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/ellipse_11"
+                        android:layout_width="30dp"
+                        android:layout_height="21.47dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true" />
 
-            <TextView
-                android:id="@+id/kg1_10"
-                android:layout_width="77dp"
-                android:layout_height="24dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="78dp"
-                android:layout_marginTop="243dp"
-                android:gravity="top"
-                android:text="1-10 Kg"
-                android:textAppearance="@style/only_people" />
+                    <RadioButton
+                        android:id="@+id/ellipse_12"
+                        android:layout_width="30dp"
+                        android:layout_height="21.47dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="12dp" />
 
-            <TextView
-                android:id="@+id/kg10_20"
-                android:layout_width="78dp"
-                android:layout_height="24dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="78dp"
-                android:layout_marginTop="277dp"
-                android:gravity="top"
-                android:text="10-20 Kg"
-                android:textAppearance="@style/only_people" />
+                    <RadioButton
+                        android:id="@+id/ellipse_14"
+                        android:layout_width="30dp"
+                        android:layout_height="21.47dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginTop="12dp" />
 
-            <TextView
-                android:id="@+id/kg20_30"
-                android:layout_width="80dp"
-                android:layout_height="24dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="251dp"
-                android:layout_marginTop="243dp"
-                android:gravity="top"
-                android:text="20-30 Kg"
-                android:textAppearance="@style/only_people" />
+                </RadioGroup>
 
-            <TextView
-                android:id="@+id/kg30_40"
-                android:layout_width="82dp"
-                android:layout_height="24dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="251dp"
-                android:layout_marginTop="277dp"
-                android:gravity="top"
-                android:text="30-40 Kg"
-                android:textAppearance="@style/only_people" />
+                <TextView
+                    android:id="@+id/only_people"
+                    android:layout_width="306dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="Only People"
+                    android:textAppearance="@style/only_people"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_2"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_2"
+                    app:layout_constraintVertical_bias="0.615" />
+
+                <TextView
+                    android:id="@+id/only_animal"
+                    android:layout_width="306dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="Only Animal"
+                    android:textAppearance="@style/only_people"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.37" />
+
+                <TextView
+                    android:id="@+id/both"
+                    android:layout_width="306dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="Both"
+                    android:textAppearance="@style/only_people"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_2"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_2"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_2"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_2"
+                    app:layout_constraintVertical_bias="0.877" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="200dp">
+
+                <View
+                    android:id="@+id/rectangle_3"
+                    android:layout_width="370dp"
+                    android:layout_height="129dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/rectangle_2_for_donationsac"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/donation_wa"
+                    android:layout_width="226dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:text="Donation Weight"
+                    android:textAppearance="@style/donation_ty"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_3"
+                    app:layout_constraintVertical_bias="0.105"
+                    app:layout_constraintHorizontal_bias="0.083"/>
+
+
+                <RadioGroup
+                    android:id="@+id/weight"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
+                    app:layout_constraintHorizontal_bias="0.069"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_3"
+                    app:layout_constraintVertical_bias="0.771">
+
+                    <!-- First pair of radio buttons aligned vertically -->
+                    <RadioButton
+                        android:id="@+id/ellipse_15"
+                        android:layout_width="30dp"
+                        android:layout_height="22dp" />
+
+                    <RadioButton
+                        android:id="@+id/ellipse_16"
+                        android:layout_width="30dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="181dp"
+                        android:layout_marginTop="-21.50dp" />
+
+                    <!-- Second pair of radio buttons aligned horizontally -->
+                    <RadioButton
+                        android:id="@+id/ellipse_17"
+                        android:layout_width="30dp"
+                        android:layout_height="22dp"
+                        android:layout_marginTop="12dp" />
+
+                    <RadioButton
+                        android:id="@+id/ellipse_18"
+                        android:layout_width="30dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="181dp"
+                        android:layout_marginTop="-21.50dp" />
+                </RadioGroup>
+
+                <TextView
+                    android:id="@+id/kg20_30"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="20-30 Kg"
+                    android:textAppearance="@style/only_people"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
+                    app:layout_constraintHorizontal_bias="0.803"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_3"
+                    app:layout_constraintVertical_bias="0.523" />
+
+                <TextView
+                    android:id="@+id/kg30_40"
+                    android:layout_width="82dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="30-40 Kg"
+                    android:textAppearance="@style/only_people"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
+                    app:layout_constraintHorizontal_bias="0.809"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_3"
+                    app:layout_constraintVertical_bias="0.847" />
+
+                <TextView
+                    android:id="@+id/kg10_20"
+                    android:layout_width="78dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:gravity="top"
+                    android:text="10-20 Kg"
+                    android:textAppearance="@style/only_people"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_3"
+                    app:layout_constraintVertical_bias="0.5"
+                    app:layout_constraintHorizontal_bias="0.185"/>
+
+                <TextView
+                    android:id="@+id/kg1_10"
+                    android:layout_width="77dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="1-10 Kg"
+                    android:textAppearance="@style/only_people"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_3"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_3"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_3"
+                    app:layout_constraintVertical_bias="0.830"
+                    app:layout_constraintHorizontal_bias="0.185"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_3" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="243dp">
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
             <!-- new -->
 
-            <View
-                android:id="@+id/rectangle_4"
-                android:layout_width="370dp"
-                android:layout_height="129dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="12dp"
-                android:layout_marginTop="360dp"
-                android:background="@drawable/rectangle_2_for_donationsac" />
-
-            <TextView
-                android:id="@+id/donation_wa_2"
-                android:layout_width="226dp"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="365dp"
-                android:layout_marginLeft="-10dp"
-                android:gravity="center_horizontal|top"
-                android:text="Suggested Vehicle"
-                android:textAppearance="@style/donation_ty" />
-
-            <RadioGroup
-                android:id="@+id/suggested_vechicle"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="33dp"
-                android:layout_marginTop="405dp"
-                android:orientation="vertical">
+                android:layout_marginTop="360dp">
 
-                <RadioButton
-                    android:id="@+id/ellipse_19"
-                    android:layout_width="30dp"
-                    android:layout_height="22dp" />
+                <View
+                    android:id="@+id/rectangle_4"
+                    android:layout_width="370dp"
+                    android:layout_height="129dp"
+                    android:background="@drawable/rectangle_2_for_donationsac"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                <RadioButton
-                    android:id="@+id/ellipse_20"
-                    android:layout_width="30dp"
-                    android:layout_height="22dp"
-                    android:layout_marginLeft="181dp"
-                    android:layout_marginTop="-21.50dp"/>
+                <TextView
+                    android:id="@+id/donation_wa_2"
+                    android:layout_width="226dp"
+                    android:layout_height="25dp"
+                    android:text="Suggested Vehicle"
+                    android:textAppearance="@style/donation_ty"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_4"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_4"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_4"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_4"
+                    app:layout_constraintVertical_bias="0.105"
+                    app:layout_constraintHorizontal_bias="0.083"/>
 
-                <RadioButton
-                    android:id="@+id/ellipse_21"
-                    android:layout_width="30dp"
-                    android:layout_height="22dp"
-                    android:layout_marginTop="12dp" />
+                <RadioGroup
+                    android:id="@+id/suggested_vechicle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_4"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_4"
+                    app:layout_constraintHorizontal_bias="0.106"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_4"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_4"
+                    app:layout_constraintVertical_bias="0.774">
 
-                <RadioButton
-                    android:id="@+id/ellipse_22"
-                    android:layout_width="30dp"
-                    android:layout_height="22dp"
-                    android:layout_marginTop="-21.50dp"
-                    android:layout_marginLeft="181dp"/>
-            </RadioGroup>
+                    <RadioButton
+                        android:id="@+id/ellipse_19"
+                        android:layout_width="30dp"
+                        android:layout_height="22dp" />
 
-            <TextView
-                android:id="@+id/kg1_10_2"
-                android:layout_width="77dp"
-                android:layout_height="24dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="78dp"
-                android:layout_marginTop="403dp"
-                android:gravity="top"
-                android:text="Bike"
-                android:textAppearance="@style/only_people" />
+                    <RadioButton
+                        android:id="@+id/ellipse_20"
+                        android:layout_width="30dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="181dp"
+                        android:layout_marginTop="-21.50dp" />
 
-            <TextView
-                android:id="@+id/kg10_20_2"
-                android:layout_width="78dp"
-                android:layout_height="24dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="78dp"
-                android:layout_marginTop="437dp"
-                android:gravity="top"
-                android:text="Car"
-                android:textAppearance="@style/only_people" />
+                    <RadioButton
+                        android:id="@+id/ellipse_21"
+                        android:layout_width="30dp"
+                        android:layout_height="22dp"
+                        android:layout_marginTop="12dp" />
 
-            <TextView
-                android:id="@+id/kg20_30_2"
-                android:layout_width="80dp"
-                android:layout_height="24dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="251dp"
-                android:layout_marginTop="403dp"
-                android:gravity="top"
-                android:text="Tempo"
-                android:textAppearance="@style/only_people" />
+                    <RadioButton
+                        android:id="@+id/ellipse_22"
+                        android:layout_width="30dp"
+                        android:layout_height="22dp"
+                        android:layout_marginLeft="181dp"
+                        android:layout_marginTop="-21.50dp" />
+                </RadioGroup>
 
-            <TextView
-                android:id="@+id/kg30_40_2"
-                android:layout_width="78dp"
-                android:layout_height="24dp"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentTop="true"
-                android:layout_marginLeft="251dp"
-                android:layout_marginTop="437dp"
-                android:gravity="top"
-                android:text="Van"
-                android:textAppearance="@style/only_people" />
+                <TextView
+                    android:id="@+id/kg1_10_2"
+                    android:layout_width="77dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="Bike"
+                    android:textAppearance="@style/only_people"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_4"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_4"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5"
+                    app:layout_constraintHorizontal_bias="0.185"/>
 
-            <TextView
-                android:id="@+id/pin_code"
-                android:layout_width="226dp"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="12dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="505dp"
-                android:text="Pin Code"
-                android:textAppearance="@style/pin_code"
-                android:gravity="top"
-                />
+                <TextView
+                    android:id="@+id/kg10_20_2"
+                    android:layout_width="78dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="Car"
+                    android:textAppearance="@style/only_people"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_4"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_4"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_4"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.830"
+                    app:layout_constraintHorizontal_bias="0.185"/>
 
-            <View
-                android:id="@+id/rectangle_pincode"
-                android:layout_width="370dp"
-                android:layout_height="67dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="12dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="540dp"
-                android:background="@drawable/rectangle_pincode"
-                />
+                <TextView
+                    android:id="@+id/kg20_30_2"
+                    android:layout_width="80dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="Tempo"
+                    android:textAppearance="@style/only_people"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_4"
+                    app:layout_constraintHorizontal_bias="0.81"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_4"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_4"
+                    app:layout_constraintVertical_bias="0.523" />
 
-            <EditText
-                android:id="@+id/some_id"
-                android:layout_width="325dp"
-                android:layout_height="36dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="35dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="558dp"
-                android:textAppearance="@style/some_id"
-                android:inputType="number"
-                android:hint="Enter Your Pincode"
-                style="@style/NoUnderlineEditText"
-                android:gravity="center_vertical"
-                />
+                <TextView
+                    android:id="@+id/kg30_40_2"
+                    android:layout_width="78dp"
+                    android:layout_height="24dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="Van"
+                    android:textAppearance="@style/only_people"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_4"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_4"
+                    app:layout_constraintHorizontal_bias="0.804"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_4"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_4"
+                    app:layout_constraintVertical_bias="0.847" />
 
-            <TextView
-                android:id="@+id/address"
-                android:layout_width="226dp"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="12dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="620dp"
-                android:text="Address"
-                android:textAppearance="@style/pin_code"
-                android:gravity="top"
-                />
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-            <View
-                android:id="@+id/rectangle_address"
-                android:layout_width="370dp"
-                android:layout_height="125dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="12dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="655dp"
-                android:background="@drawable/rectangle_address"
-                />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="505dp">
 
-            <EditText
-                android:id="@+id/address_text"
-                android:layout_width="340dp"
+                <TextView
+                    android:id="@+id/pin_code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:text="Pin Code"
+                    android:textAppearance="@style/pin_code"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_pincode"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_pincode"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_pincode"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <View
+                    android:id="@+id/rectangle_pincode"
+                    android:layout_width="370dp"
+                    android:layout_height="67dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/rectangle_pincode"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:layout_constraintHorizontal_bias="0.499"/>
+
+                <EditText
+                    android:id="@+id/some_id"
+                    style="@style/NoUnderlineEditText"
+                    android:layout_width="325dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Your Pincode"
+                    android:inputType="number"
+                    android:textAppearance="@style/some_id"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_pincode"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_pincode"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_pincode"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_pincode" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="165dp"
+                android:layout_marginTop="620dp">
+
+                <TextView
+                    android:id="@+id/address"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="Address"
+                    android:textAppearance="@style/pin_code"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_address"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_address"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_address"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.021" />
+
+                <View
+                    android:id="@+id/rectangle_address"
+                    android:layout_width="370dp"
+                    android:layout_height="125dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/rectangle_address"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.942" />
+
+                <EditText
+                    android:id="@+id/address_text"
+                    style="@style/NoUnderlineEditText"
+                    android:layout_width="340dp"
+                    android:layout_height="wrap_content"
+                    android:hint="Enter Address"
+                    android:inputType="textMultiLine"
+                    android:textAppearance="@style/address_text"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_address"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_address"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_address"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_address"
+                    app:layout_constraintVertical_bias="0.159" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="800dp">
+
+                <TextView
+                    android:id="@+id/contact_no_"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="Contact No"
+                    android:textAppearance="@style/pin_code"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_contactno"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_contactno"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_contactno"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <View
+                    android:id="@+id/rectangle_contactno"
+                    android:layout_width="370dp"
+                    android:layout_height="67dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/rectangle_pincode"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0"
+                    app:layout_constraintHorizontal_bias="0.499"/>
+
+                <EditText
+                    android:id="@+id/some_mobileno"
+                    style="@style/NoUnderlineEditText"
+                    android:layout_width="325dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Mobile Number"
+                    android:inputType="number"
+                    android:textAppearance="@style/some_id"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_contactno"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_contactno"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_contactno"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_contactno" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="918dp">
+
+                <TextView
+                    android:id="@+id/rename"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="Place Name"
+                    android:textAppearance="@style/pin_code"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_resname"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_resname"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_resname"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <View
+                    android:id="@+id/rectangle_resname"
+                    android:layout_width="370dp"
+                    android:layout_height="67dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/rectangle_pincode"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="1.0" />
+
+                <EditText
+                    android:id="@+id/res_name"
+                    style="@style/NoUnderlineEditText"
+                    android:layout_width="325dp"
+                    android:layout_height="36dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_vertical"
+                    android:hint="Enter Place Name"
+                    android:inputType="text"
+                    android:textAppearance="@style/some_id"
+                    android:textSize="22sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/rectangle_resname"
+                    app:layout_constraintEnd_toEndOf="@+id/rectangle_resname"
+                    app:layout_constraintStart_toStartOf="@+id/rectangle_resname"
+                    app:layout_constraintTop_toTopOf="@+id/rectangle_resname" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="335dp"
+                android:layout_marginTop="1030dp">
+
+                <TextView
+                    android:id="@+id/loc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="25dp"
+                    android:gravity="top"
+                    android:text="Location"
+                    android:textAppearance="@style/pin_code"
+                    app:layout_constraintBottom_toBottomOf="@+id/cardView"
+                    app:layout_constraintEnd_toEndOf="@+id/cardView"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/cardView"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <androidx.fragment.app.FragmentContainerView
+                        android:id="@+id/map"
+                        android:name="com.google.android.gms.maps.SupportMapFragment"
+                        android:layout_width="380dp"
+                        android:layout_height="300dp" />
+
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="30dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="660dp"
-                android:textAppearance="@style/address_text"
-                android:inputType="textMultiLine"
-                android:hint="Enter Address"
-                style="@style/NoUnderlineEditText"
-                android:gravity="top|start"
-                android:paddingStart="20dp"
-                android:paddingTop="20dp"
-                />
-
-            <TextView
-                android:id="@+id/contact_no_"
-                android:layout_width="226dp"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="12dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="796dp"
-                android:text="Contact No"
-                android:textAppearance="@style/pin_code"
-                android:gravity="top"
-                />
-
-            <View
-                android:id="@+id/rectangle_contactno"
-                android:layout_width="370dp"
-                android:layout_height="67dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="12dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="833dp"
-                android:background="@drawable/rectangle_pincode"
-                />
-
-            <EditText
-                android:id="@+id/some_mobileno"
-                android:layout_width="325dp"
-                android:layout_height="36dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="30dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="850dp"
-                android:textAppearance="@style/some_id"
-                android:textSize="22sp"
-                android:inputType="number"
-                android:hint="Enter Mobile Number"
-                style="@style/NoUnderlineEditText"
-                android:gravity="center_vertical"
-                />
-
-            <TextView
-                android:id="@+id/rename"
-                android:layout_width="226dp"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="12dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="918dp"
-                android:text="Place Name"
-                android:textAppearance="@style/pin_code"
-                android:gravity="top"
-                />
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="1070dp"
-                android:layout_marginStart="7dp"
-                app:cardCornerRadius="16dp">
-
-                <androidx.fragment.app.FragmentContainerView
-                    android:layout_width="380dp"
-                    android:layout_height="300dp"
-                    android:name="com.google.android.gms.maps.SupportMapFragment"
-                    android:id="@+id/map" />
-
-            </androidx.cardview.widget.CardView>
-
-            <View
-                android:id="@+id/rectangle_resname"
-                android:layout_width="370dp"
-                android:layout_height="67dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="12dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="955dp"
-                android:background="@drawable/rectangle_pincode"
-                />
-
-            <EditText
-                android:id="@+id/res_name"
-                android:layout_width="325dp"
-                android:layout_height="36dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="30dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="972dp"
-                android:textAppearance="@style/some_id"
-                android:textSize="22sp"
-                android:inputType="text"
-                android:hint="Enter Place Name"
-                style="@style/NoUnderlineEditText"
-                android:gravity="center_vertical"
-                />
-
-            <TextView
-                android:id="@+id/loc"
-                android:layout_width="226dp"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="12dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="1030dp"
-                android:text="Location"
-                android:textAppearance="@style/pin_code"
-                android:gravity="top"
-                />
-
-
-            <View
-                android:id="@+id/submit_btn"
-                android:layout_width="237dp"
-                android:layout_height="53dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="78dp"
-                android:layout_alignParentTop="true"
                 android:layout_marginTop="1750dp"
-                android:layout_marginBottom="10dp"
-                android:background="@drawable/submit_rectangle"
-                />
+                android:paddingBottom="15sp">
 
-            <TextView
-                android:id="@+id/submit"
-                android:layout_width="103dp"
-                android:layout_height="39dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="149.50dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="1757dp"
-                android:text="Submit"
-                android:textColor="#FFFFFF"
-                android:textSize="32sp"
-                android:lineHeight="38sp"
-                android:fontFamily="@font/abhaya_libre"
-                android:gravity="top"
-                />
+                <View
+                    android:id="@+id/submit_btn"
+                    android:layout_width="237dp"
+                    android:layout_height="53dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:background="@drawable/submit_rectangle"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.501"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/img"
-                android:layout_width="226dp"
-                android:layout_height="25dp"
-                android:layout_alignParentLeft="true"
-                android:layout_marginLeft="12dp"
-                android:layout_alignParentTop="true"
-                android:layout_marginTop="1385dp"
-                android:text="Upload Food Image"
-                android:textAppearance="@style/pin_code"
-                android:gravity="top"
-                />
+                <TextView
+                    android:id="@+id/submit"
+                    android:layout_width="103dp"
+                    android:layout_height="39dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:fontFamily="@font/abhaya_libre"
+                    android:gravity="top"
+                    android:lineHeight="38sp"
+                    android:text="Submit"
+                    android:textColor="#FFFFFF"
+                    android:textSize="32sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/submit_btn"
+                    app:layout_constraintEnd_toEndOf="@+id/submit_btn"
+                    app:layout_constraintStart_toStartOf="@+id/submit_btn"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-            <androidx.cardview.widget.CardView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="1425dp"
-                app:cardCornerRadius="16dp"
-                android:layout_marginStart="7dp">
 
-                <RelativeLayout
-                    android:layout_width="380dp"
-                    android:layout_height="300dp">
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-                    <ImageView
-                        android:id="@+id/food_img"
-                        android:layout_width="100dp"
-                        android:layout_height="100dp"
-                        android:layout_centerInParent="true"
-                        android:src="@drawable/cammera" />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="335dp"
+                android:layout_marginTop="1385dp">
 
-                    <ImageView
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:id="@+id/food_img_2"/>
-                </RelativeLayout>
-            </androidx.cardview.widget.CardView>
+                <TextView
+                    android:id="@+id/img"
+                    android:layout_width="226dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="top"
+                    android:text="Upload Food Image"
+                    android:textAppearance="@style/pin_code"
+                    app:layout_constraintBottom_toBottomOf="@+id/cardView2"
+                    app:layout_constraintEnd_toEndOf="@+id/cardView2"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="@+id/cardView2"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.0" />
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/cardView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="16dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                    <RelativeLayout
+                        android:layout_width="380dp"
+                        android:layout_height="300dp">
+
+                        <ImageView
+                            android:id="@+id/food_img"
+                            android:layout_width="100dp"
+                            android:layout_height="100dp"
+                            android:layout_centerInParent="true"
+                            android:src="@drawable/cammera" />
+
+                        <ImageView
+                            android:id="@+id/food_img_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent" />
+                    </RelativeLayout>
+                </androidx.cardview.widget.CardView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
         </RelativeLayout>
 

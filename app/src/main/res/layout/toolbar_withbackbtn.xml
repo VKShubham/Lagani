@@ -29,43 +29,46 @@
 
     <TextView
         android:id="@+id/lagni"
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="45dp"
-        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_marginStart="125dp"
         android:layout_marginTop="18dp"
         android:text="Lagni"
         android:textAppearance="@style/lagni"
-        android:gravity="center_horizontal|top"
+        android:layout_gravity="center_horizontal"
         />
 
-    <androidx.cardview.widget.CardView
-        android:layout_width="45dp"
-        android:layout_height="45dp"
-        app:cardCornerRadius="250dp"
-        android:layout_marginStart="340dp"
-        android:layout_marginTop="20dp"
-        app:cardBackgroundColor="@color/white">
-
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
         <androidx.cardview.widget.CardView
             android:layout_width="45dp"
             android:layout_height="45dp"
             app:cardCornerRadius="250dp"
-            android:layout_gravity="center">
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="25dp"
+            android:layout_alignParentRight="true"
+            app:cardBackgroundColor="@color/white">
 
-
-            <ImageView
-                android:id="@+id/logo"
+            <androidx.cardview.widget.CardView
                 android:layout_width="45dp"
                 android:layout_height="45dp"
-                android:scaleType="centerCrop"
-                android:background="@drawable/round_photo"
-                android:src="@drawable/persosndashlogo" />
+                app:cardCornerRadius="250dp"
+                android:layout_gravity="center">
 
+
+                <ImageView
+                    android:id="@+id/logo"
+                    android:layout_width="45dp"
+                    android:layout_height="45dp"
+                    android:scaleType="centerCrop"
+                    android:background="@drawable/round_photo"
+                    android:src="@drawable/persosndashlogo" />
+
+
+            </androidx.cardview.widget.CardView>
 
         </androidx.cardview.widget.CardView>
-
-    </androidx.cardview.widget.CardView>
+    </RelativeLayout>
 
 </com.google.android.material.appbar.CollapsingToolbarLayout>

@@ -10,145 +10,179 @@
     android:elevation="23dp"
     android:background="@drawable/donators">
 
-    <include layout="@layout/toolbar"/>
+    <include
+        layout="@layout/toolbar"/>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="122dp"
+        android:layout_marginTop="115dp">
 
+        <View
+            android:id="@+id/rectangle_3"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/rectangle_4"
+            android:src="@drawable/donationicon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.073"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
 
-    <View
-        android:id="@+id/rectangle_3"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="20dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="122dp"
-        android:background="@drawable/rectangle_4"
-        android:src="@drawable/donationicon"
-        />
-    <ImageView
-        android:id="@+id/rectangle_32"
-        android:layout_width="56.94dp"
-        android:layout_height="49dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="25dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="134dp"
-        android:background="@drawable/rectangle_4"
-        android:src="@drawable/donationicon"
-        />
+        <ImageView
+            android:id="@+id/rectangle_32"
+            android:layout_width="56.94dp"
+            android:layout_height="49dp"
+            android:background="@drawable/rectangle_4"
+            android:src="@drawable/donationicon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.090"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.438" />
 
-    <View
-        android:id="@+id/rectangle_4"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="117dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="122dp"
-        android:src="@drawable/statusicon"
-        android:background="@drawable/rectangle_4"
-        />
+        <View
+            android:id="@+id/rectangle_4"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/rectangle_4"
+            android:src="@drawable/statusicon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.377"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
 
-    <ImageView
-        android:id="@+id/icon_dashbo"
-        android:layout_width="56.94dp"
-        android:layout_height="49dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="125dp"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/statusicon"
-        android:layout_marginTop="133dp"
-        />
+        <ImageView
+            android:id="@+id/icon_dashbo"
+            android:layout_width="56.94dp"
+            android:layout_height="49dp"
+            android:src="@drawable/statusicon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.385"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.438" />
 
-    <TextView
-        android:id="@+id/status"
-        android:layout_width="107dp"
-        android:layout_height="19dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="99dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="195dp"
-        android:text="Status"
-        android:textAppearance="@style/donation"
-        android:gravity="center_horizontal|top"
-        />
+        <TextView
+            android:id="@+id/status"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal|top"
+            android:text="Status"
+            android:textAppearance="@style/donation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.388"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.932" />
 
-    <View
-        android:id="@+id/rectangle_5"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="212dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="119dp"
-        android:background="@drawable/rectangle_4"
-        />
+        <View
+            android:id="@+id/rectangle_5"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/rectangle_4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.672"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
 
-    <ImageView
-        android:id="@+id/icon_clock_"
-        android:layout_width="49dp"
-        android:layout_height="49dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="223dp"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/clockicon"
-        android:layout_marginTop="133dp"
-        />
+        <ImageView
+            android:id="@+id/icon_clock_"
+            android:layout_width="49dp"
+            android:layout_height="49dp"
+            android:src="@drawable/clockicon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.663"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.438" />
 
-    <TextView
-        android:id="@+id/history"
-        android:layout_width="68dp"
-        android:layout_height="19dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="215dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="195dp"
-        android:text="History"
-        android:textAppearance="@style/donation"
-        android:gravity="center_horizontal|top"
-        />
+        <TextView
+            android:id="@+id/history"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal|top"
+            android:text="History"
+            android:textAppearance="@style/donation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.664"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.941" />
 
-    <View
-        android:id="@+id/rectangle_6"
-        android:layout_width="72dp"
-        android:layout_height="72dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="307dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="119dp"
-        android:background="@drawable/rectangle_4"
-        />
+        <View
+            android:id="@+id/rectangle_6"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:background="@drawable/rectangle_4"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.949"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
 
-    <ImageView
-        android:id="@+id/icon_log_ou"
-        android:layout_width="46dp"
-        android:layout_height="41dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="321dp"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/logouticon"
-        android:layout_marginTop="135dp"
-        />
+        <ImageView
+            android:id="@+id/icon_log_ou"
+            android:layout_width="45dp"
+            android:layout_height="40dp"
+            android:src="@drawable/logouticon"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.924"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.44" />
 
-    <TextView
-        android:id="@+id/logout"
-        android:layout_width="71dp"
-        android:layout_height="20dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="307dp"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="195dp"
-        android:text="Logout"
-        android:textAppearance="@style/donation"
-        android:gravity="center_horizontal|top"
-        />
+        <TextView
+            android:id="@+id/logout"
+            android:layout_width="71dp"
+            android:layout_height="20dp"
+            android:gravity="center_horizontal|top"
+            android:text="Logout"
+            android:textAppearance="@style/donation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.95" />
+
+        <TextView
+            android:id="@+id/donation"
+            android:layout_width="wrap_content"
+            android:layout_height="19dp"
+            android:gravity="center_horizontal|top"
+            android:text="Donation"
+            android:textAppearance="@style/donation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.076"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.932" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 
     <View
         android:id="@+id/rectangle_2"
-        android:layout_width="359dp"
+        android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="270dp"
         android:background="@drawable/rectangle_2" />
 
@@ -176,34 +210,23 @@
 
     <TextView
         android:id="@+id/donation_hi"
-        android:layout_width="230dp"
+        android:layout_width="match_parent"
+        android:layout_toEndOf="@id/line_1"
         android:layout_height="72dp"
-        android:layout_alignParentLeft="true"
+        android:layout_alignEnd="@+id/rectangle_2"
         android:layout_alignParentTop="true"
-        android:layout_marginLeft="145dp"
         android:layout_marginTop="270dp"
         android:gravity="center_horizontal|center_vertical"
         android:text="Donation History"
         android:textAppearance="@style/donation_hi" />
 
-    <TextView
-        android:id="@+id/donation"
-        android:layout_width="94dp"
-        android:layout_height="19dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="9dp"
-        android:layout_marginTop="195dp"
-        android:gravity="center_horizontal|top"
-        android:text="donation"
-        android:textAppearance="@style/donation"/>
-
     <View
         android:id="@+id/rectangle_7"
-        android:layout_width="359dp"
+        android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="19dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="377dp"
         android:background="@drawable/rectangle_2"
@@ -233,25 +256,25 @@
 
     <TextView
         android:id="@+id/update_prof"
-        android:layout_width="230dp"
+        android:layout_width="match_parent"
         android:layout_height="72dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="145dp"
         android:layout_alignParentTop="true"
+        android:layout_alignEnd="@id/rectangle_7"
         android:layout_marginTop="375dp"
-        android:text="Update Profile"
-        android:textAppearance="@style/donation_hi"
+        android:layout_toEndOf="@id/line_4"
         android:gravity="center_horizontal|center_vertical"
-        />
+        android:text="Update Profile"
+        android:textAppearance="@style/donation_hi" />
 
     <View
         android:id="@+id/rectangle_8"
-        android:layout_width="359dp"
+        android:layout_width="match_parent"
         android:layout_height="72dp"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginLeft="18dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_marginTop="478dp"
         android:background="@drawable/rectangle_2" />
 
@@ -279,23 +302,24 @@
 
     <TextView
         android:id="@+id/current_loc"
-        android:layout_width="230dp"
+        android:layout_width="match_parent"
         android:layout_height="72dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="144dp"
         android:layout_alignParentTop="true"
+        android:layout_alignEnd="@id/rectangle_8"
+        android:layout_marginStart="1dp"
         android:layout_marginTop="477dp"
-        android:text="Current Location"
-        android:textAppearance="@style/donation_hi"
+        android:layout_toEndOf="@id/line_6"
         android:gravity="center_horizontal|center_vertical"
-        />
+        android:text="Current Location"
+        android:textAppearance="@style/donation_hi" />
 
     <View
         android:id="@+id/rectangle_9"
-        android:layout_width="359dp"
+        android:layout_width="match_parent"
         android:layout_height="178dp"
         android:layout_alignParentLeft="true"
-        android:layout_marginLeft="18dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         android:layout_alignParentTop="true"
         android:layout_marginTop="577dp"
         android:background="@drawable/rectangle_5"
@@ -303,25 +327,24 @@
 
     <ImageView
         android:id="@+id/emoji_famil"
-        android:layout_width="93dp"
-        android:layout_height="129dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="64dp"
-        android:layout_alignParentTop="true"
-        android:src="@drawable/familyemoji"
-        android:layout_marginTop="600dp"
-        />
+        android:layout_width="185dp"
+        android:layout_height="145dp"
+        android:layout_alignStart="@id/rectangle_9"
+        android:layout_alignTop="@id/rectangle_9"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginRight="140dp"
+        android:layout_marginBottom="20dp"
+        android:layout_toLeftOf="@id/stay_connec"
+        android:src="@drawable/familyemoji" />
 
     <TextView
         android:id="@+id/stay_connec"
         android:layout_width="230dp"
         android:layout_height="178dp"
-        android:layout_alignParentLeft="true"
-        android:layout_marginLeft="126dp"
-        android:layout_alignParentTop="true"
+        android:layout_alignEnd="@id/rectangle_9"
         android:layout_marginTop="573dp"
         android:text="Stay \nConnected \nwith \nus"
         android:textAppearance="@style/stay_connec"
-        android:gravity="right|center_vertical"
         />
 </RelativeLayout>

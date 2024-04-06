@@ -50,10 +50,14 @@ public class Intro extends AppCompatActivity {
 
         ArrayList<SlideModel> imageList = new ArrayList<>();
 
-        SlideModel slideModel = new SlideModel(R.drawable.intro1, ScaleTypes.CENTER_CROP);
+        SlideModel slideModel = new SlideModel(R.drawable.intro6, ScaleTypes.CENTER_CROP);
         imageList.add(slideModel);
-        SlideModel slideMode1l = new SlideModel(R.drawable.intro2, ScaleTypes.CENTER_CROP);
+        SlideModel slideMode1l = new SlideModel(R.drawable.intro7, ScaleTypes.CENTER_CROP);
         imageList.add(slideMode1l);
+        SlideModel slideMode2l = new SlideModel(R.drawable.intro4, ScaleTypes.CENTER_CROP);
+        imageList.add(slideMode2l);
+
+
         ImageSlider imageSlider = findViewById(R.id.image_slider);
         imageSlider.setImageList(imageList);
     }
